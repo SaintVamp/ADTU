@@ -1,0 +1,1 @@
+speedtest --secure --simple > out
