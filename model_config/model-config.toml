@@ -132,6 +132,7 @@ control_speed = false
 "dubhe.site" = "dubhe.site"
 "ptlao.top" = "ptlao.top"
 "longpt.org" = "longpt.org"
+"www.ptskit.org" = "www.ptskit.org"
 
 [userid]                                            #目标站的uid用引号包围，一般在个人详情页面中能够查看到，不配置则不会向该站发布
 "www.agsvpt.com" = ""
@@ -218,6 +219,7 @@ control_speed = false
 "dubhe.site" = ""
 "ptlao.top" = ""
 "longpt.org" = ""
+"www.ptskit.org" = ""
 
 [cookies]                                           #源站和目标站的cookies信息，可在浏览器命令行输入document.cookie打印后直接复制放入。
 "www.agsvpt.com" = ""
@@ -304,6 +306,7 @@ control_speed = false
 "dubhe.site" = ""
 "ptlao.top" = ""
 "longpt.org" = ""
+"www.ptskit.org" = ""
 
 [priority]                                           #设置目标站的优先级，数字越小优先级越高，如0-999，0最优先。
 "www.agsvpt.com" = 999
@@ -390,6 +393,7 @@ control_speed = false
 "dubhe.site" = 999
 "ptlao.top" = 999
 "longpt.org" = 999
+"www.ptskit.org" = 999
 
 [image_bed]
 bed_use = ""                                        #图床使用开关，agsvpt|smms|ptdream|pixhost，N选一填入
