@@ -187,9 +187,9 @@
     "release/update.sh": "cf2948ec8af06a90b8eceaeb81cb4c26",
     "release/run.py": "7eeb69f695157b8831b8d3c58b6e2e3a",
     "release/run.sh": "7cc06b7258d0031a4353672dcb1fc3fb",
-    "./operate_site/ptskit.py": "8ceffe52c3a054fcfb4f877e367d4686",
+    "./operate_site/ptskit.py": "e77b064eaf65d301f134213a3be11c43",
     "model_config/each_site.toml": "6a31097618bdf88df006936642711340",
     "model_config/site/www.ptskit.org.toml": "13f56da5b5661202260189654dc15f95"
   },
-  "last_git_commit": "3a645cc2fa4d86f23e555c4d93e57abdbc6f428c"
+  "last_git_commit": "67897a6b40e65de769aef8ce0b5061423c543421"
 }
