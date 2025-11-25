@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "927a1d468c97177ec2b89f8c378e302b",
+    "./atut_serv.py": "ea9b45b91b9aa6d63dd00ab96163ccb7",
     "./get_rss.py": "c54ecf9c994f83a85a50ec4c5ac1f4e9",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -191,5 +191,5 @@
     "model_config/each_site.toml": "6a31097618bdf88df006936642711340",
     "model_config/site/www.ptskit.org.toml": "13f56da5b5661202260189654dc15f95"
   },
-  "last_git_commit": "02c9d89e865b0d830f7a1e35439b5808634e223a"
+  "last_git_commit": "c98654c0500b6cb34ff06b76b51b763b6e0b0a85"
 }
