@@ -86,17 +86,17 @@
     "./operate_site/zrpt.py": "f0cb2a68023dc9fc5ea3c885cf3aa7d2",
     "./operate_site/ptsbao.py": "fe343471e8c1ceabec0288c0f5bdf69f",
     "./auto_upload.py": "c0a451deb9035a2f91430443f7a04e64",
-    "./util/site_config.py": "10b4115aeb787e5ed56a7cd8cce7322f",
+    "./util/site_config.py": "f224a64a13e0fb12c694bdcee9b643c4",
     "./util/notice.py": "3acd830cd19edfad0599c19d5f8132a2",
     "./util/svlog.py": "b26872e6d6f41786ecc5e7635e38ea04",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
-    "./util/change_factory.py": "85a79b4c430d5083cbc71932aa8413c3",
+    "./util/change_factory.py": "68d07eb65e89f5e702cb73311f5ed08a",
     "./util/media_mapping.py": "eb5d855e91992aa1f9a6f5475c042f9c",
-    "./util/sqlite_operate.py": "2c5557aba91aa19d6bd4793b59bee470",
-    "./util/authentication.py": "2bec602d48bcd958926521f053918421",
+    "./util/sqlite_operate.py": "ea4ee7bd5246e488a6627593bffaab27",
+    "./util/authentication.py": "89347f908e7c5d63abd3e20516599aae",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "0520072e65bca63256afccc460bd0d48",
-    "model_config/model-config-dtu.toml": "62b2fde2ad2f0e848d53952012dc2cbb",
+    "./util/tools.py": "efaac7459026267c5b3fd052b7e7dfc0",
+    "model_config/model-config-dtu.toml": "964c733dd07e88c303a2510da9b24a0e",
     "model_config/readme_dtu.txt": "269d3a9724c7d34c0e4ab864e7e06c3f",
     "model_config/site/hdbao.cc.toml": "13f56da5b5661202260189654dc15f95",
     "model_config/site/longpt.org.toml": "13f56da5b5661202260189654dc15f95",
@@ -188,8 +188,10 @@
     "release/run.py": "7eeb69f695157b8831b8d3c58b6e2e3a",
     "release/run.sh": "7cc06b7258d0031a4353672dcb1fc3fb",
     "./operate_site/ptskit.py": "ddf49d65ce34a71f0d2157154fdcbe9e",
-    "model_config/each_site.toml": "6a31097618bdf88df006936642711340",
-    "model_config/site/www.ptskit.org.toml": "13f56da5b5661202260189654dc15f95"
+    "model_config/each_site.toml": "5e01281c1430a24b87b6974463da833d",
+    "model_config/site/www.ptskit.org.toml": "13f56da5b5661202260189654dc15f95",
+    "./operate_site/tangpt.py": "1e674401bce7b0667bf0e5d0c3501377",
+    "model_config/site/www.tangpt.top.toml": "13f56da5b5661202260189654dc15f95"
   },
-  "last_git_commit": "c98654c0500b6cb34ff06b76b51b763b6e0b0a85"
+  "last_git_commit": "93fb0fc5aa03dd55ebdac4d25996ae3abe44dbb8"
 }
