@@ -187,11 +187,11 @@
     "release/update.sh": "cf2948ec8af06a90b8eceaeb81cb4c26",
     "release/run.py": "7eeb69f695157b8831b8d3c58b6e2e3a",
     "release/run.sh": "7cc06b7258d0031a4353672dcb1fc3fb",
-    "./operate_site/ptskit.py": "ddf49d65ce34a71f0d2157154fdcbe9e",
+    "./operate_site/ptskit.py": "5279c3b60a8a67b751cd198b9ade9ea7",
     "model_config/each_site.toml": "5e01281c1430a24b87b6974463da833d",
     "model_config/site/www.ptskit.org.toml": "13f56da5b5661202260189654dc15f95",
     "./operate_site/tangpt.py": "1e674401bce7b0667bf0e5d0c3501377",
     "model_config/site/www.tangpt.top.toml": "13f56da5b5661202260189654dc15f95"
   },
-  "last_git_commit": "93fb0fc5aa03dd55ebdac4d25996ae3abe44dbb8"
+  "last_git_commit": "b372281d1b67de5e0f8f6bbef388418bfcca5055"
 }
