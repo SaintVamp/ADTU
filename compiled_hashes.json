@@ -95,7 +95,7 @@
     "./util/sqlite_operate.py": "feeff2f6eeb759f03e52d3408662a871",
     "./util/authentication.py": "cd853b2c0ca2af0bd9fb5febe95709b4",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "5c211ff7f8c753076fe7f044670a9369",
+    "./util/tools.py": "6980a1a8b6f53c214683c3f1ecbf8b98",
     "model_config/model-config-dtu.toml": "a902ab2440ef57499fa01b391310b7d7",
     "model_config/readme_dtu.txt": "269d3a9724c7d34c0e4ab864e7e06c3f",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -194,5 +194,5 @@
     "model_config/site/www.tangpt.top.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "release/run_test.sh": "bb21c616d1aa0e276117023181cc71b9"
   },
-  "last_git_commit": "ccbf800eef125b6debb00bb12ba982b2a0387b93"
+  "last_git_commit": "dd47b1c3b81cb5c3085305f599d0c73cb799c7a9"
 }
