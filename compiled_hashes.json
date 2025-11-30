@@ -11,7 +11,7 @@
     "./operate_site/hdtime.py": "58194354e34b4c93878007a44d5659f4",
     "./operate_site/oneptba.py": "aa8f5d9a316ca827e6a144e25b145cea",
     "./operate_site/mypt.py": "167d288a0c69dedd9f4572e741cfd65c",
-    "./operate_site/agsvpt.py": "0cea622bdf4b2e4dca4e9a57a335fcaa",
+    "./operate_site/agsvpt.py": "14e1eaef6cfa34caff36afcbdf124a0b",
     "./operate_site/longpt.py": "60f4bf66441bf34823eaab4a802c8a85",
     "./operate_site/lemonhd.py": "276d15c83e50f6fa6d79801e8767087b",
     "./operate_site/oshen.py": "b55ff22c21c19962cb7605f37f018aae",
@@ -194,5 +194,5 @@
     "model_config/site/www.tangpt.top.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "release/run_test.sh": "bb21c616d1aa0e276117023181cc71b9"
   },
-  "last_git_commit": "49b7966f7a5b927f8cc0a3210ca41955a28c05bd"
+  "last_git_commit": "ccbf800eef125b6debb00bb12ba982b2a0387b93"
 }
