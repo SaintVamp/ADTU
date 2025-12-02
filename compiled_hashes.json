@@ -78,7 +78,7 @@
     "./operate_site/btschool.py": "4c85d3621f22a134a9b93ddb44b126de",
     "./operate_site/ptzone.py": "c5be741eddb627c1ff222c589c0f9c3b",
     "./operate_site/hspt.py": "565c79dc2ed9647bf467420ed61761a1",
-    "./operate_site/lajidui.py": "1de29f009feb9cf522a1aeec2beb886f",
+    "./operate_site/lajidui.py": "42192badf0baae03bf34945fb0f850d1",
     "./operate_site/leaves.py": "d4df76a012ed34717dc9777b423f6a1e",
     "./operate_site/luckpt.py": "4bff180d800d6315722a545eea34b536",
     "./operate_site/nanyangpt.py": "812026c2c8ea4d192a4d307320985205",
@@ -196,5 +196,5 @@
     "./operate_site/baozi.py": "4caccd6e879e83e3ea423e69b3537918",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "a5ecb6931a9a4837b11a61f5a414f858bd6f7408"
+  "last_git_commit": "632bd18c03ec04cde021d70a5e7491d20923df35"
 }
