@@ -26,7 +26,7 @@ saintvamp/auto_dtu:latest】
 -v /{资源存储的父目录地址}/download:/downloads/disk1 \
 --restart always \
 qbittorrentofficial/qbittorrent-nox:4.6.0-1】
-五、QB容器映射的资源地址和DTU容器映射的资源地址必须一致！！！
+五、QB容器映射的资源地址，DTU容器映射的资源地址，config中配置的地址，三者必须一致！！！
 
 群共享有API调用小工具，可以下载使用。
 
