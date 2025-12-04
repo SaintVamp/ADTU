@@ -392,7 +392,7 @@ control_speed = false
 "pt.baozi.cc" = 999
 
 [image_bed]
-bed_use = ""                                        #图床使用开关，agsvpt|smms|ptdream|pixhost，N选一填入
+bed_use = ""                                        #必填项，图床使用开关，agsvpt|smms|ptdream|pixhost，N选一填入
 picture_type = "PNG"                                #使用截图的后缀，JPG|PNG，二选一填入。如果选PNG，会无视源站截图重新截取。如果选JPG，优先用源站，若无则截取为九宫格。
 pieces = 4                                          #截取N张图片
 
