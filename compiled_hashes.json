@@ -91,7 +91,7 @@
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
-    "./util/media_mapping.py": "7a38af848d4c494d5a4e1aa6301212d0",
+    "./util/media_mapping.py": "d2afd8f51f2fb81ba2f2aa37a5bc989f",
     "./util/sqlite_operate.py": "f644e500790fd1808c443fee44500c3b",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
@@ -196,5 +196,5 @@
     "./operate_site/baozi.py": "4caccd6e879e83e3ea423e69b3537918",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "ead4ffb4c202a8bd26d7fa33e6e10a4aa1242249"
+  "last_git_commit": "0dcf871cfacda8334c106edb86f4d73a1ae11aaa"
 }
