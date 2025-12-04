@@ -49,7 +49,7 @@
     "./operate_site/pthome.py": "fb997926602e6f1abfb8e09fab1c85ed",
     "./operate_site/hdarea.py": "a62bb235cb936095045c28f044960eb3",
     "./operate_site/ptfans.py": "4b5b5f263103fefb70e4aceed4042fc9",
-    "./operate_site/cspt.py": "3df915817a73c06ff927c552c4462c39",
+    "./operate_site/cspt.py": "b1a3db5b7fa00af4a80542c3e035cd36",
     "./operate_site/yhpp.py": "c7cb57955cbc61ffca22f3f2d2e57aa5",
     "./operate_site/torrenthub.py": "d13b6a62a23158d2c3ec348d2731049a",
     "./operate_site/crabpt.py": "0db03337150bcd70ba63f8636cdb7a34",
@@ -196,5 +196,5 @@
     "./operate_site/baozi.py": "4caccd6e879e83e3ea423e69b3537918",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "0dcf871cfacda8334c106edb86f4d73a1ae11aaa"
+  "last_git_commit": "7ff1520ee566d59e4926495f70d6fb09beb438fe"
 }
