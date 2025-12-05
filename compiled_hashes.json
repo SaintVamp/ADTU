@@ -85,14 +85,14 @@
     "./operate_site/sanpro.py": "0f6955d4ee4306d8eb261bedaef86b40",
     "./operate_site/zrpt.py": "7898415a119371a7765d37b5aabd1587",
     "./operate_site/ptsbao.py": "1fc3ada37f5e3f53c7e85b4bb967f4e9",
-    "./auto_upload.py": "a3d34647218b06145b31976965456b0e",
+    "./auto_upload.py": "bada2da5845b75c6bd22933071cee38a",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
     "./util/notice.py": "3acd830cd19edfad0599c19d5f8132a2",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
     "./util/media_mapping.py": "d2afd8f51f2fb81ba2f2aa37a5bc989f",
-    "./util/sqlite_operate.py": "f644e500790fd1808c443fee44500c3b",
+    "./util/sqlite_operate.py": "613f1069e00aa5cfd74aa6afef2de8de",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "406b9d6dde9046c97569459b9072155d",
@@ -196,5 +196,5 @@
     "./operate_site/baozi.py": "4caccd6e879e83e3ea423e69b3537918",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "95633eac938c84416e109c78e932458570e23588"
+  "last_git_commit": "13f84b6a88ff455884acf3347e98213b81764aba"
 }
