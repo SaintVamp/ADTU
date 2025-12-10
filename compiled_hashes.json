@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "cbbada5f568c4a96f7f2fa1f2665cbc7",
+    "./atut_serv.py": "b54cbbdb25600178a0a5f74be6f34650",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -197,5 +197,5 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "17075df2c3b69b738874bb0f7109861c12a311fa"
+  "last_git_commit": "6d04d4867555a9b0da8ba8be9dded6f606334ddb"
 }
