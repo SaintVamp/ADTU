@@ -193,9 +193,9 @@
     "./operate_site/tangpt.py": "f823eae60dce980b3773f0966db96050",
     "model_config/site/www.tangpt.top.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "release/run_test.sh": "bb21c616d1aa0e276117023181cc71b9",
-    "./operate_site/baozi.py": "0917d7c384773298303a5fbb69243b9d",
+    "./operate_site/baozi.py": "ff557b5d3514bfaec78f7ce5dd495f4d",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
-    "model_config/model-forbidden.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
+    "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c"
   },
-  "last_git_commit": "3b3efc853233d58bd95ad38a510a2efa7ab0502e"
+  "last_git_commit": "7f32f61a30f11821f8a62fe3349e7b0656563858"
 }
