@@ -25,10 +25,10 @@ move_source_path = "/downloads/"                    #期望移动到的新路径
 http_porxy = "http://ip:port"                       #代理，用于访问无法连接的RSS
 rss_control_host = "http://127.0.0.1:56789"         #RSS总控的调用地址
 rss_pause = false                                   #暂停拉取新种子
-concurrency_upload_speed = 100                      #允许同时做种上传的种子上传速度阈值，低于此值不进行计算，单位KB
-concurrency_upload_num = 5                          #允许同时做种上传的种子最大数量，大于该值时不进行源种下载。
-concurrency_upload_magnify = 3                      #允许同时做种上传的种子最大数量的倍数，大于数量乘倍数之后的值时不进行资源发布。
-min_wait_upload = 3                                 #大于未发布种子数N的时候，不进行RSS拉取
+concurrency_upload_speed = 100                      #允许同时做种上传的种子上传速度阈值，大于此值的计为M，单位KB
+concurrency_upload_num = 5                          #允许同时做种上传的种子最大数量，M大于该值时不进行源种下载。
+concurrency_upload_magnify = 3                      #允许同时做种上传的种子最大数量的倍数，M大于数量乘倍数之后的值时不进行资源发布。
+min_wait_upload = 3                                 #未发布种子数大于此值时，不进行RSS拉取
 
 [qb_server]                                         #QB相关设置，强烈建议QB使用4.6.0版本，过高版本接口调不通
 url = "http://127.0.0.1"                            #QB的webui地址，docker部署方式可直接默认

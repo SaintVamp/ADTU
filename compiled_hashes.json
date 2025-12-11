@@ -96,7 +96,7 @@
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "b7ac40a682724d7d75dc1b295114c33b",
-    "model_config/model-config-dtu.toml": "991708a210d8dfdf2117f3d1244f47e3",
+    "model_config/model-config-dtu.toml": "82c1460d8496ca61ed5de6b535168f53",
     "model_config/readme_dtu.txt": "e66a88cbf423a143d2852d8ddc908800",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/site/longpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -197,5 +197,5 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c"
   },
-  "last_git_commit": "7f32f61a30f11821f8a62fe3349e7b0656563858"
+  "last_git_commit": "4d5d5fe4df4b7dd6e7ce0d70ac05b7de3463d98a"
 }
