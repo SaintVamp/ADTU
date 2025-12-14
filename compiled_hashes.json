@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "15bb2accae63e61f5a01ac54d93c9f16",
+    "./atut_serv.py": "29623d7f5c8946b1d40ab9ad4874b2c2",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -87,7 +87,7 @@
     "./operate_site/ptsbao.py": "1fc3ada37f5e3f53c7e85b4bb967f4e9",
     "./auto_upload.py": "bada2da5845b75c6bd22933071cee38a",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
-    "./util/notice.py": "3acd830cd19edfad0599c19d5f8132a2",
+    "./util/notice.py": "11d09051e6c3cf7a70ad062194198c1b",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
@@ -195,7 +195,10 @@
     "release/run_test.sh": "bb21c616d1aa0e276117023181cc71b9",
     "./operate_site/baozi.py": "ff557b5d3514bfaec78f7ce5dd495f4d",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
-    "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c"
+    "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
+    "templates/index.html": "3b16193153125b17742c3182a11d677d",
+    "templates/config.html": "f940fd1b3ad5b88961fee160189b82c6",
+    "templates/interface.html": "d3e540d8925eabbe2a788ceeff99494f"
   },
-  "last_git_commit": "8cd8fce08a59e65685b64df23e34174bbd5dcd2b"
+  "last_git_commit": "65d344eea83558ecf8263002d58a358f67fd2984"
 }
