@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "b54cbbdb25600178a0a5f74be6f34650",
+    "./atut_serv.py": "15bb2accae63e61f5a01ac54d93c9f16",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -95,8 +95,8 @@
     "./util/sqlite_operate.py": "613f1069e00aa5cfd74aa6afef2de8de",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "b7ac40a682724d7d75dc1b295114c33b",
-    "model_config/model-config-dtu.toml": "82c1460d8496ca61ed5de6b535168f53",
+    "./util/tools.py": "a7151311fc63375f5c83b7fd1c408bff",
+    "model_config/model-config-dtu.toml": "93a40743c705fd7e9f954b6f72c1adf0",
     "model_config/readme_dtu.txt": "e66a88cbf423a143d2852d8ddc908800",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/site/longpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -197,5 +197,5 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c"
   },
-  "last_git_commit": "4d5d5fe4df4b7dd6e7ce0d70ac05b7de3463d98a"
+  "last_git_commit": "8cd8fce08a59e65685b64df23e34174bbd5dcd2b"
 }
