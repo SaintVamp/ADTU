@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动转发工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .link-item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            min-width: 150px;
+        }
+        .link-item:hover {
+            background-color: #2980b9;
+        }
+        .link-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .link-item p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎使用自动转发工具</h1>
+        <p>请选择您要访问的功能页面：</p>
+
+        <div class="links">
+            <a href="/config" class="link-item">
+                <h2>配置页面</h2>
+                <p>系统配置管理</p>
+            </a>
+            <a href="/interface" class="link-item">
+                <h2>接口页面</h2>
+                <p>工具接口调用</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

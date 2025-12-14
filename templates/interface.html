@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTU接口调用</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .api-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .error {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .success {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .interface-container {
+            border: 1px solid #eee;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .interface-title {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .interface-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .interface-row .interface-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .interface-row {
+                flex-direction: column;
+            }
+
+            .interface-row .interface-container {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>自动转发工具接口调用</h1>
+
+    <!-- DTU 接口 -->
+    <div class="api-section">
+        <h2 class="section-title">接口列表</h2>
+
+
+        <div class="interface-row">
+            <!-- forceLimit -->
+            <div class="interface-container">
+                <div class="interface-title">强制执行一次限速 (forceLimit)</div>
+                <button onclick="callApi('DTU', 'forceLimit')">调用接口</button>
+                <div class="result" id="forceLimit_result"></div>
+            </div>
+
+            <!-- forceRss -->
+            <div class="interface-container">
+                <div class="interface-title">强制获取RSS数据 (forceRss)</div>
+                <button onclick="callApi('DTU', 'forceRss')">调用接口</button>
+                <div class="result" id="forceRss_result"></div>
+            </div>
+        </div>
+
+
+        <div class="interface-row">
+            <!-- forceDownTorrent -->
+            <div class="interface-container">
+                <div class="interface-title">强制下载种子 (forceDownTorrent)</div>
+                <div class="form-group">
+                    <label for="forceDownTorrent_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="forceDownTorrent_h" placeholder="请输入信息哈希值">
+                </div>
+                <div class="form-group">
+                    <label for="forceDownTorrent_u">种子详情页的下载链接:</label>
+                    <input type="text" id="forceDownTorrent_u" placeholder="请输入下载链接">
+                </div>
+                <button onclick="callApi('DTU', 'forceDownTorrent')">调用接口</button>
+                <div class="result" id="forceDownTorrent_result"></div>
+            </div>
+            <!-- reload -->
+            <div class="interface-container">
+                <div class="interface-title">目标站重发 (reload)</div>
+                <div class="form-group">
+                    <label for="reload_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="reload_h" placeholder="请输入信息哈希值">
+                </div>
+                <div class="form-group">
+                    <label for="reload_ts">目标站点域名:</label>
+                    <input type="text" id="reload_ts" placeholder="请输入目标站点域名">
+                </div>
+                <button onclick="callApi('DTU', 'reload')">调用接口</button>
+                <div class="result" id="reload_result"></div>
+            </div>
+        </div>
+
+        <!-- unfinished -->
+        <div class="interface-container">
+            <div class="interface-title">查询未完成任务清单 (unfinished)</div>
+            <button onclick="callApi('DTU', 'unfinished')">调用接口</button>
+            <div class="result" id="unfinished_result"></div>
+        </div>
+
+        <div class="interface-row">
+            <!-- delTorrent -->
+            <div class="interface-container">
+                <div class="interface-title">哈希值删除发布任务 (delTorrent)</div>
+                <div class="form-group">
+                    <label for="delTorrent_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="delTorrent_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('DTU', 'delTorrent')">调用接口</button>
+                <div class="result" id="delTorrent_result"></div>
+            </div>
+
+            <!-- getHashInfo -->
+            <div class="interface-container">
+                <div class="interface-title">获取源种存储信息 (getHashInfo)</div>
+                <div class="form-group">
+                    <label for="getHashInfo_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="getHashInfo_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('DTU', 'getHashInfo')">调用接口</button>
+                <div class="result" id="getHashInfo_result"></div>
+            </div>
+        </div>
+
+
+        <div class="interface-row">
+            <!-- downloaded -->
+            <div class="interface-container">
+                <div class="interface-title">源种完成下载通知 (downloaded)</div>
+                <div class="form-group">
+                    <label for="downloaded_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="downloaded_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('DTU', 'downloaded')">调用接口</button>
+                <div class="result" id="downloaded_result"></div>
+            </div>
+
+
+            <!-- torrentUpState -->
+            <div class="interface-container">
+                <div class="interface-title">种子发布情况 (torrentUpState)</div>
+                <div class="form-group">
+                    <label for="torrentUpState_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="torrentUpState_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('DTU', 'torrentUpState')">调用接口</button>
+                <div class="result" id="torrentUpState_result"></div>
+            </div>
+        </div>
+
+
+        <div class="interface-row">
+            <!-- reloadHash -->
+            <div class="interface-container">
+                <div class="interface-title">源站种子重发 (reloadHash)</div>
+                <div class="form-group">
+                    <label for="reloadHash_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="reloadHash_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('DTU', 'reloadHash')">调用接口</button>
+                <div class="result" id="reloadHash_result"></div>
+            </div>
+
+            <!-- reloadSite -->
+            <div class="interface-container">
+                <div class="interface-title">对目标站重发所有种子 (reloadSite)</div>
+                <div class="form-group">
+                    <label for="reloadSite_s">目标站点域名:</label>
+                    <input type="text" id="reloadSite_s" placeholder="请输入目标站点域名">
+                </div>
+                <button onclick="callApi('DTU', 'reloadSite')">调用接口</button>
+                <div class="result" id="reloadSite_result"></div>
+            </div>
+        </div>
+
+        <div class="interface-row">
+            <!-- change -->
+            <div class="interface-container">
+                <div class="interface-title">站点替换接口 (change)</div>
+                <div class="form-group">
+                    <label for="change_os">原站点域名:</label>
+                    <input type="text" id="change_os" placeholder="请输入原站点域名">
+                </div>
+                <div class="form-group">
+                    <label for="change_ns">新站点域名:</label>
+                    <input type="text" id="change_ns" placeholder="请输入新站点域名">
+                </div>
+                <button onclick="callApi('DTU', 'change')">调用接口</button>
+                <div class="result" id="change_result"></div>
+            </div>
+
+            <!-- addNewSite -->
+            <div class="interface-container">
+                <div class="interface-title">新增站点快速增加本地发布任务 (addNewSite)</div>
+                <div class="form-group">
+                    <label for="addNewSite_ts">模版站点域名:</label>
+                    <input type="text" id="addNewSite_ts" placeholder="请输入模版站点域名">
+                </div>
+                <div class="form-group">
+                    <label for="addNewSite_ns">新增站点域名:</label>
+                    <input type="text" id="addNewSite_ns" placeholder="请输入新增站点域名">
+                </div>
+                <button onclick="callApi('DTU', 'addNewSite')">调用接口</button>
+                <div class="result" id="addNewSite_result"></div>
+            </div>
+        </div>
+
+        <!-- statistics -->
+        <div class="interface-container">
+            <div class="interface-title">统计站点发布数据 (statistics)</div>
+            <div class="form-group">
+                <label for="statistics_s">源站点域名:</label>
+                <input type="text" id="statistics_s" placeholder="请输入源站点域名">
+            </div>
+            <div class="form-group">
+                <label for="statistics_ym">查询年月 (格式202501):</label>
+                <input type="text" id="statistics_ym" placeholder="请输入查询年月">
+            </div>
+            <button onclick="callApi('DTU', 'statistics')">调用接口</button>
+            <div class="result" id="statistics_result"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 调用API函数
+    function callApi(module, method) {
+        // 使用Flask提供的基础地址
+        const baseUrl = "{{ request.host_url }}sv/dtu/api";
+        let url = baseUrl + '/' + method;
+
+        let options = {
+            method: 'GET'
+        };
+
+        // 根据不同接口构建参数
+        switch (method) {
+            case 'forceDownTorrent':
+                const h_forceDownTorrent = document.getElementById('forceDownTorrent_h').value;
+                const u_forceDownTorrent = document.getElementById('forceDownTorrent_u').value;
+                const forceDownTorrentData = {h: h_forceDownTorrent, u: u_forceDownTorrent};
+                options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(forceDownTorrentData)
+                };
+                break;
+
+            case 'delTorrent':
+                const h_delTorrent = document.getElementById('delTorrent_h').value;
+                url += `?h=${encodeURIComponent(h_delTorrent)}`;
+                break;
+
+            case 'getHashInfo':
+                const h_getHashInfo = document.getElementById('getHashInfo_h').value;
+                url += `?h=${encodeURIComponent(h_getHashInfo)}`;
+                break;
+
+            case 'downloaded':
+                const h_downloaded = document.getElementById('downloaded_h').value;
+                url += `?h=${encodeURIComponent(h_downloaded)}`;
+                break;
+
+            case 'reload':
+                const h_reload = document.getElementById('reload_h').value;
+                const ts_reload = document.getElementById('reload_ts').value;
+                url += `?h=${encodeURIComponent(h_reload)}&ts=${encodeURIComponent(ts_reload)}`;
+                break;
+
+            case 'torrentUpState':
+                const h_torrentUpState = document.getElementById('torrentUpState_h').value;
+                url += `?h=${encodeURIComponent(h_torrentUpState)}`;
+                break;
+
+            case 'reloadHash':
+                const h_reloadHash = document.getElementById('reloadHash_h').value;
+                url += `?h=${encodeURIComponent(h_reloadHash)}`;
+                break;
+
+            case 'reloadSite':
+                const s_reloadSite = document.getElementById('reloadSite_s').value;
+                url += `?s=${encodeURIComponent(s_reloadSite)}`;
+                break;
+
+            case 'change':
+                const os_change = document.getElementById('change_os').value;
+                const ns_change = document.getElementById('change_ns').value;
+                url += `?os=${encodeURIComponent(os_change)}&ns=${encodeURIComponent(ns_change)}`;
+                break;
+
+            case 'addNewSite':
+                const ts_addNewSite = document.getElementById('addNewSite_ts').value;
+                const ns_addNewSite = document.getElementById('addNewSite_ns').value;
+                url += `?ts=${encodeURIComponent(ts_addNewSite)}&ns=${encodeURIComponent(ns_addNewSite)}`;
+                break;
+
+            case 'statistics':
+                const s_statistics = document.getElementById('statistics_s').value;
+                const ym_statistics = document.getElementById('statistics_ym').value;
+                url += `?s=${encodeURIComponent(s_statistics)}&ym=${encodeURIComponent(ym_statistics)}`;
+                break;
+
+            default:
+                // 无参数接口 (forceLimit, forceRss, unfinished)
+                break;
+        }
+
+        // 发送请求
+        fetch(url, options)
+            .then(response => {
+                return response.json().then(data => {
+                    // 返回完整的响应对象和解析后的数据
+                    return {response: response, data: data};
+                });
+            })
+            .then(result => {
+                const {response, data} = result;
+                const resultId = `${method}_result`;
+
+                // 检查响应状态和返回码
+                if (!response.ok || data.code !== 200) {
+                    const errorMsg = data.msg || `HTTP error! status: ${response.status}`;
+                    document.getElementById(resultId).innerHTML = `错误: ${errorMsg}`;
+                    document.getElementById(resultId).className = 'result error';
+                } else {
+                    document.getElementById(resultId).innerHTML = data.msg || '操作成功';
+                    document.getElementById(resultId).className = 'result success';
+                }
+            })
+            .catch(error => {
+                const resultId = `${method}_result`;
+                document.getElementById(resultId).innerHTML = `错误: ${error.message}`;
+                document.getElementById(resultId).className = 'result error';
+            });
+    }
+
+
+</script>
+</body>
+</html>
