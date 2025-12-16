@@ -15,7 +15,9 @@
 -v /{资源存储的父目录地址}/download:/downloads/disk1 \
 saintvamp/auto_dtu:latest】
 #自行修改-v中冒号前的文件夹地址后，执行一次，此时程序未运行，只是生成容器。
-三、修改config中config.toml中的内容，配置说明见每个配置项后的说明文字。
+三、
+(1)可以通过访问日志打印的地址(如http://127.0.0.1:45678)进行配置
+(2)修改config中config.toml中的内容，配置说明见每个配置项后的说明文字。
 四、建议QB使用官方4.6.0或以上版本。创建容器命令：【docker run -d --network host \
 --name=qb \
 -e PUID=911 \
