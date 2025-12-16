@@ -193,12 +193,12 @@
     "./operate_site/tangpt.py": "f823eae60dce980b3773f0966db96050",
     "model_config/site/www.tangpt.top.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "release/run_test.sh": "bb21c616d1aa0e276117023181cc71b9",
-    "./operate_site/baozi.py": "ff557b5d3514bfaec78f7ce5dd495f4d",
+    "./operate_site/baozi.py": "2d85741e56b21bb3aea094ce982fb0f8",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
     "templates/index.html": "3b16193153125b17742c3182a11d677d",
     "templates/config.html": "f940fd1b3ad5b88961fee160189b82c6",
     "templates/interface.html": "d3e540d8925eabbe2a788ceeff99494f"
   },
-  "last_git_commit": "081418fc730cb9bad75b53ae5132cb56cee2051c"
+  "last_git_commit": "19f83c8cadf564a17f3ea50aa67a7e1681bc038d"
 }
