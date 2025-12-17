@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "fa9817ff3a358acd0a0eb07c6677baf4",
+    "./atut_serv.py": "2d64a1c199c99604c2ab7f9e3d4e1116",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -197,8 +197,8 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
     "templates/index.html": "3b16193153125b17742c3182a11d677d",
-    "templates/config.html": "f940fd1b3ad5b88961fee160189b82c6",
+    "templates/config.html": "86735a10c332e0190f963a29dc25202b",
     "templates/interface.html": "d3e540d8925eabbe2a788ceeff99494f"
   },
-  "last_git_commit": "19f83c8cadf564a17f3ea50aa67a7e1681bc038d"
+  "last_git_commit": "819c11f15502cd0a95c19b2c3f72382962cc600b"
 }

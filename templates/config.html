@@ -151,6 +151,15 @@
             background-color: #218838;
         }
 
+        .btn-yellow {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .btn-yellow:hover {
+            background-color: #e0a800;
+        }
+
         @media (max-width: 768px) {
             .form-item {
                 min-width: 100%;
@@ -164,35 +173,38 @@
     <div class="fixed-top-buttons">
         <h1>发种工具配置编辑器</h1>
         <div class="help-text">建议修改配置前先备份当前配置</div>
-        <button type="button" class="btn btn-red" id="backupBtn" onclick="backupConfig()">备份配置</button>
-        <button type="button" class="btn btn-green" id="restoreBtn" onclick="restoreConfig()">恢复配置</button>
-        <button type="button" class="btn" id="saveBtn" onclick="saveConfig()">保存配置</button>
+        <input type="password" id="adminPassword" placeholder="请输入密码后点击加载"
+               style="padding: 5px; margin: 0 10px; border-radius: 4px; border: 1px solid #ccc; width: 150px;">
+        <button type="button" class="btn btn-yellow" id="loadBtn" onclick="loadConfig()">页面加载配置</button>
+        <button type="button" class="btn" id="saveBtn" onclick="saveConfig()">页面保存配置</button>
+        <button type="button" class="btn btn-red" id="backupBtn" onclick="backupConfig()">后端备份配置</button>
+        <button type="button" class="btn btn-green" id="restoreBtn" onclick="restoreConfig()">后端恢复配置</button>
     </div>
-    <form id="configForm">
+    <form id="configForm" style="display: none;">
         <!-- 基本配置 -->
         <div class="section">
             <div class="section-title">基本配置</div>
             <div class="form-group">
                 <div class="form-item">
                     <label for="port">通信端口</label>
-                    <input type="number" id="port" name="port" value="45678">
+                    <input type="number" id="port" name="port" value="">
                     <div class="help-text">工具使用的通信端口</div>
                 </div>
                 <div class="form-item">
                     <label for="tool_api">通信IP</label>
-                    <input type="text" id="tool_api" name="tool_api" value="127.0.0.1">
+                    <input type="text" id="tool_api" name="tool_api" value="">
                     <div class="help-text">工具自身使用的通信IP，与QB相同主机时默认即可，与QB不同主机时填写具体的【http(s)://ip:port】port后不加/</div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-item">
                     <label for="who_am_i">应用标识</label>
-                    <input type="text" id="who_am_i" name="who_am_i" value="DTU">
+                    <input type="text" id="who_am_i" name="who_am_i" value="">
                     <div class="help-text">向种子抓取工具请求时明确是哪台分布式应用</div>
                 </div>
                 <div class="form-item">
                     <label for="authorize_code">鉴权识别码</label>
-                    <input type="text" id="authorize_code" name="authorize_code" value="ABCEDFG1234567HIJKLMN76543211111">
+                    <input type="text" id="authorize_code" name="authorize_code" value="">
                     <div class="help-text">鉴权识别码，该码会动态增加已支持的站点，重启生效</div>
                 </div>
             </div>
@@ -229,7 +241,7 @@
             <div class="form-group">
                 <div class="form-item">
                     <label for="rss_control_host">种子抓取工具地址</label>
-                    <input type="text" id="rss_control_host" name="rss_control_host" value="http://127.0.0.1:56789">
+                    <input type="text" id="rss_control_host" name="rss_control_host" value="">
                     <div class="help-text">R种子抓取工具的调用地址，需要发布工具容器</div>
                 </div>
                 <div class="form-item">
@@ -259,19 +271,19 @@
             <div class="form-group">
                 <div class="form-item">
                     <label for="concurrency_upload_speed">并发上传速度阈值（KB）</label>
-                    <input type="number" id="concurrency_upload_speed" name="concurrency_upload_speed" value="100">
+                    <input type="number" id="concurrency_upload_speed" name="concurrency_upload_speed" value="">
                     <div class="help-text">允许同时做种上传的种子上传速度阈值(KB)，大于此值的计入O</div>
                 </div>
                 <div class="form-item">
                     <label for="concurrency_upload_num">最大并发上传数</label>
-                    <input type="number" id="concurrency_upload_num" name="concurrency_upload_num" value="5">
+                    <input type="number" id="concurrency_upload_num" name="concurrency_upload_num" value="">
                     <div class="help-text">允许同时做种上传的种子最大数量，计为P，O>P时不拉新种</div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-item">
                     <label for="concurrency_upload_magnify">并发上传倍数</label>
-                    <input type="number" id="concurrency_upload_magnify" name="concurrency_upload_magnify" value="3">
+                    <input type="number" id="concurrency_upload_magnify" name="concurrency_upload_magnify" value="">
                     <div class="help-text">允许同时做种上传的种子最大数量的倍数，计为Q，M>P*Q时不拉新种</div>
                 </div>
             </div>
@@ -821,17 +833,33 @@
 
     async function loadConfig() {
         try {
-            const response = await fetch(baseUrl + '/getMainConfig');
+            const password = document.getElementById('adminPassword').value;
+            if (!password) {
+                alert('请输入密码后再加载配置');
+                return;
+            }
+            const response = await fetch(baseUrl + '/getMainConfig', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({pw: password})
+            });
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             const config = await response.json();
+            if (parseInt(config.code) !== 200) {
+                throw new Error(`${config.msg}`);
+            }
             old_config = JSON.parse(config.msg);
             new_config = JSON.parse(config.msg);
             fillForm(new_config);
+            document.getElementById('configForm').style.display = 'block';
         } catch (error) {
-            console.error('加载配置失败:', error);
-            alert('加载配置失败，请检查网络连接或稍后重试');
+            console.error('加载配置失败:', error.message);
+            alert('加载配置失败:' + error.message);
         }
     }
 
@@ -935,7 +963,6 @@
 
         if (selectedSite) {
             container.style.display = 'block';
-            container.dataset.currentSite = selectedSite;
             container.dataset.currentSite = selectedSite;
             forbidBtn.disabled = false
 
@@ -1089,8 +1116,8 @@
         }
     };
 
-    function saveCurrentSiteConfig(siteToSave) {
-        const selectedSite = siteToSave || document.getElementById('site_selector').value;
+    function saveCurrentSiteConfig(site) {
+        const selectedSite = site || document.getElementById('site_selector').value;
         if (selectedSite) {
             if (!new_config.domain) new_config.domain = {};
             if (!new_config.userid) new_config.userid = {};
@@ -1461,17 +1488,23 @@
     }
 
     function saveConfig() {
+        const password = document.getElementById('adminPassword').value;
+        if (!password) {
+            alert('请输入密码后再保存配置');
+            return;
+        }
         saveCurrentSiteConfig();
 
         const changes = showConfigChanges();
 
         if (confirm(changes + "\n\n确认保存这些更改吗？")) {
+
             fetch(baseUrl + '/setMainConfig', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(new_config)
+                body: JSON.stringify({'pw': password, 'toml': new_config})
             })
                 .then(response => {
                     if (response.ok) {
@@ -1552,7 +1585,6 @@
             const container = document.querySelector('.container');
             container.style.marginTop = (buttonsHeight + 20) + 'px';
         }, 100);
-        loadConfig();
         addBlurListeners();
     });
 </script>
