@@ -6,6 +6,7 @@
 二、创建容器：【docker run -d --network host \
 --name=auto_dtu \
 -e TZ=Asia/Shanghai \
+-e UI_PASSWORD={指定密码字符} \
 -v /{DTU的父目录地址}/auto_dtu/bdinfo:/auto_dtu/bdinfo \
 -v /{DTU的父目录地址}/auto_dtu/config:/auto_dtu/config \
 -v /{DTU的父目录地址}/auto_dtu/database:/auto_dtu/database \
@@ -15,7 +16,7 @@
 -v /{资源存储的父目录地址}/download:/downloads/disk1 \
 saintvamp/auto_dtu:latest】
 #自行修改-v中冒号前的文件夹地址后，执行一次，此时程序未运行，只是生成容器。
-三、
+三、修改配置
 (1)可以通过访问日志打印的地址(如http://127.0.0.1:45678)进行配置
 (2)修改config中config.toml中的内容，配置说明见每个配置项后的说明文字。
 四、建议QB使用官方4.6.0或以上版本。创建容器命令：【docker run -d --network host \
