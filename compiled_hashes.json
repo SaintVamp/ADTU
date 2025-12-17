@@ -85,7 +85,7 @@
     "./operate_site/sanpro.py": "0f6955d4ee4306d8eb261bedaef86b40",
     "./operate_site/zrpt.py": "7898415a119371a7765d37b5aabd1587",
     "./operate_site/ptsbao.py": "1fc3ada37f5e3f53c7e85b4bb967f4e9",
-    "./auto_upload.py": "06bcc63275e0e181673a22b549b949b1",
+    "./auto_upload.py": "ac80a95e1e5eef41222aa39b8991bde5",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
     "./util/notice.py": "11d09051e6c3cf7a70ad062194198c1b",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
@@ -200,5 +200,5 @@
     "templates/config.html": "86735a10c332e0190f963a29dc25202b",
     "templates/interface.html": "d3e540d8925eabbe2a788ceeff99494f"
   },
-  "last_git_commit": "418f10485a9ead3bf4e184af44ef357f0d737405"
+  "last_git_commit": "572157bbb944cd7fa468a8e41d1a5b9429add881"
 }
