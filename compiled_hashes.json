@@ -95,7 +95,7 @@
     "./util/sqlite_operate.py": "613f1069e00aa5cfd74aa6afef2de8de",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "89335777016557758cc33cdf73af9c17",
+    "./util/tools.py": "29fb8f79f0f08735ba0877da5240caf2",
     "model_config/model-config-dtu.toml": "93a40743c705fd7e9f954b6f72c1adf0",
     "model_config/readme_dtu.txt": "749dd19c33fac8d190ce5d1072e4f829",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -200,5 +200,5 @@
     "templates/config.html": "86735a10c332e0190f963a29dc25202b",
     "templates/interface.html": "d3e540d8925eabbe2a788ceeff99494f"
   },
-  "last_git_commit": "572157bbb944cd7fa468a8e41d1a5b9429add881"
+  "last_git_commit": "62c45be39446e10b74db55b6690bd76465d0acc7"
 }
