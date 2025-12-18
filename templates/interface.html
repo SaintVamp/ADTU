@@ -86,7 +86,7 @@
         }
 
         .success {
-            background-color: #2ecc71;
+            background-color: rgb(25, 106, 13);
             color: white;
         }
 
@@ -129,6 +129,7 @@
 <div class="container">
     <h1>自动转发工具接口调用</h1>
 
+
     <div class="api-section">
         <h2 class="section-title">接口列表</h2>
 
@@ -139,12 +140,51 @@
                 <button onclick="callApi('forceLimit')">调用接口</button>
                 <div class="result" id="forceLimit_result"></div>
             </div>
-
             <!-- forceRss -->
             <div class="interface-container">
                 <div class="interface-title">强制获取RSS数据 (forceRss)</div>
                 <button onclick="callApi('forceRss')">调用接口</button>
                 <div class="result" id="forceRss_result"></div>
+            </div>
+            <!-- unfinished -->
+            <div class="interface-container">
+                <div class="interface-title">查询未完成任务清单 (unfinished)</div>
+                <button onclick="callApi('unfinished')">调用接口</button>
+                <div class="result" id="unfinished_result"></div>
+            </div>
+        </div>
+        <div class="interface-row">
+            <!-- delTorrent -->
+            <div class="interface-container">
+                <div class="interface-title">哈希值删除发布任务 (delTorrent)</div>
+                <div class="form-group">
+                    <label for="delTorrent_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="delTorrent_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('delTorrent')">调用接口</button>
+                <div class="result" id="delTorrent_result"></div>
+            </div>
+            <!-- downloaded -->
+            <div class="interface-container">
+                <div class="interface-title">源种完成下载通知 (downloaded)</div>
+                <div class="form-group">
+                    <label for="downloaded_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="downloaded_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('downloaded')">调用接口</button>
+                <div class="result" id="downloaded_result"></div>
+            </div>
+
+
+            <!-- torrentUpState -->
+            <div class="interface-container">
+                <div class="interface-title">种子发布情况 (torrentUpState)</div>
+                <div class="form-group">
+                    <label for="torrentUpState_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="torrentUpState_h" placeholder="请输入信息哈希值">
+                </div>
+                <button onclick="callApi('torrentUpState')">调用接口</button>
+                <div class="result" id="torrentUpState_result"></div>
             </div>
         </div>
 
@@ -177,63 +217,6 @@
                 </div>
                 <button onclick="callApi('reload')">调用接口</button>
                 <div class="result" id="reload_result"></div>
-            </div>
-        </div>
-
-        <!-- unfinished -->
-        <div class="interface-container">
-            <div class="interface-title">查询未完成任务清单 (unfinished)</div>
-            <button onclick="callApi('unfinished')">调用接口</button>
-            <div class="result" id="unfinished_result"></div>
-        </div>
-
-        <div class="interface-row">
-            <!-- delTorrent -->
-            <div class="interface-container">
-                <div class="interface-title">哈希值删除发布任务 (delTorrent)</div>
-                <div class="form-group">
-                    <label for="delTorrent_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="delTorrent_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('delTorrent')">调用接口</button>
-                <div class="result" id="delTorrent_result"></div>
-            </div>
-
-            <!-- getHashInfo -->
-            <div class="interface-container">
-                <div class="interface-title">获取源种存储信息 (getHashInfo)</div>
-                <div class="form-group">
-                    <label for="getHashInfo_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="getHashInfo_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('getHashInfo')">调用接口</button>
-                <div class="result" id="getHashInfo_result"></div>
-            </div>
-        </div>
-
-
-        <div class="interface-row">
-            <!-- downloaded -->
-            <div class="interface-container">
-                <div class="interface-title">源种完成下载通知 (downloaded)</div>
-                <div class="form-group">
-                    <label for="downloaded_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="downloaded_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('downloaded')">调用接口</button>
-                <div class="result" id="downloaded_result"></div>
-            </div>
-
-
-            <!-- torrentUpState -->
-            <div class="interface-container">
-                <div class="interface-title">种子发布情况 (torrentUpState)</div>
-                <div class="form-group">
-                    <label for="torrentUpState_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="torrentUpState_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('torrentUpState')">调用接口</button>
-                <div class="result" id="torrentUpState_result"></div>
             </div>
         </div>
 
@@ -294,6 +277,20 @@
             </div>
         </div>
 
+
+        <!-- getHashInfo -->
+        <div class="interface-container">
+            <div class="interface-title">获取源种存储信息 (getHashInfo)</div>
+            <div class="form-group">
+                <label for="adminPassword">发种工具密码:</label>
+                <input type="password" id="adminPassword" placeholder="请输入密码">
+                <label for="getHashInfo_h">QB种子信息中的信息哈希值:</label>
+                <input type="text" id="getHashInfo_h" placeholder="请输入信息哈希值">
+            </div>
+            <button onclick="callApi('getHashInfo')">调用接口</button>
+            <div class="result" id="getHashInfo_result"></div>
+        </div>
+
         <!-- statistics -->
         <div class="interface-container">
             <div class="interface-title">统计站点发布数据 (statistics)</div>
@@ -343,8 +340,20 @@
                 break;
 
             case 'getHashInfo':
+                const password = document.getElementById('adminPassword').value;
+                if (!password) {
+                    alert('请输入密码后再保存配置');
+                    return;
+                }
                 const h_getHashInfo = document.getElementById('getHashInfo_h').value;
-                url += `?h=${encodeURIComponent(h_getHashInfo)}`;
+                const getHashInfoData = {h: h_getHashInfo, pw: password};
+                options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(getHashInfoData)
+                };
                 break;
 
             case 'downloaded':
