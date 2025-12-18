@@ -200,7 +200,7 @@
                 <div class="form-item">
                     <label for="who_am_i">应用标识</label>
                     <input type="text" id="who_am_i" name="who_am_i" value="">
-                    <div class="help-text">向种子抓取工具请求时明确是哪台分布式应用</div>
+                    <div class="help-text">向拉种工具请求时明确是哪台分布式发种应用</div>
                 </div>
                 <div class="form-item">
                     <label for="authorize_code">鉴权识别码</label>
@@ -858,7 +858,6 @@
             fillForm(new_config);
             document.getElementById('configForm').style.display = 'block';
         } catch (error) {
-            console.error('加载配置失败:', error.message);
             alert('加载配置失败:' + error.message);
         }
     }
@@ -1050,8 +1049,7 @@
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert('获取禁转配置失败，请查看控制台错误信息');
+                alert('获取禁转配置失败，'+error.message);
             });
     }
 
@@ -1103,8 +1101,7 @@
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert('保存失败，请查看控制台错误信息');
+                alert('保存失败，'+ error.message);
             });
     }
 
@@ -1521,8 +1518,7 @@
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
-                    alert('配置保存失败，请查看控制台错误信息');
+                    alert('配置保存失败，'+error.message);
                 });
         }
     }
@@ -1546,8 +1542,7 @@
                     }
                 })
                 .catch(error => {
-                    console.error('Backup error:', error);
-                    alert('配置备份失败，请查看控制台错误信息');
+                    alert('配置备份失败，'+error.message);
                 });
         }
     }
@@ -1572,8 +1567,7 @@
                     }
                 })
                 .catch(error => {
-                    console.error('Restore error:', error);
-                    alert('配置恢复失败，请查看控制台错误信息');
+                    alert('配置恢复失败，'+error.message);
                 });
         }
     }

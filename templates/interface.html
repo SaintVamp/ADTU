@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DTU接口调用</title>
+    <title>转发工具接口调用</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -129,23 +129,21 @@
 <div class="container">
     <h1>自动转发工具接口调用</h1>
 
-    <!-- DTU 接口 -->
     <div class="api-section">
         <h2 class="section-title">接口列表</h2>
-
 
         <div class="interface-row">
             <!-- forceLimit -->
             <div class="interface-container">
                 <div class="interface-title">强制执行一次限速 (forceLimit)</div>
-                <button onclick="callApi('DTU', 'forceLimit')">调用接口</button>
+                <button onclick="callApi('forceLimit')">调用接口</button>
                 <div class="result" id="forceLimit_result"></div>
             </div>
 
             <!-- forceRss -->
             <div class="interface-container">
                 <div class="interface-title">强制获取RSS数据 (forceRss)</div>
-                <button onclick="callApi('DTU', 'forceRss')">调用接口</button>
+                <button onclick="callApi('forceRss')">调用接口</button>
                 <div class="result" id="forceRss_result"></div>
             </div>
         </div>
@@ -163,7 +161,7 @@
                     <label for="forceDownTorrent_u">种子详情页的下载链接:</label>
                     <input type="text" id="forceDownTorrent_u" placeholder="请输入下载链接">
                 </div>
-                <button onclick="callApi('DTU', 'forceDownTorrent')">调用接口</button>
+                <button onclick="callApi('forceDownTorrent')">调用接口</button>
                 <div class="result" id="forceDownTorrent_result"></div>
             </div>
             <!-- reload -->
@@ -177,7 +175,7 @@
                     <label for="reload_ts">目标站点域名:</label>
                     <input type="text" id="reload_ts" placeholder="请输入目标站点域名">
                 </div>
-                <button onclick="callApi('DTU', 'reload')">调用接口</button>
+                <button onclick="callApi('reload')">调用接口</button>
                 <div class="result" id="reload_result"></div>
             </div>
         </div>
@@ -185,7 +183,7 @@
         <!-- unfinished -->
         <div class="interface-container">
             <div class="interface-title">查询未完成任务清单 (unfinished)</div>
-            <button onclick="callApi('DTU', 'unfinished')">调用接口</button>
+            <button onclick="callApi('unfinished')">调用接口</button>
             <div class="result" id="unfinished_result"></div>
         </div>
 
@@ -197,7 +195,7 @@
                     <label for="delTorrent_h">QB种子信息中的信息哈希值:</label>
                     <input type="text" id="delTorrent_h" placeholder="请输入信息哈希值">
                 </div>
-                <button onclick="callApi('DTU', 'delTorrent')">调用接口</button>
+                <button onclick="callApi('delTorrent')">调用接口</button>
                 <div class="result" id="delTorrent_result"></div>
             </div>
 
@@ -208,7 +206,7 @@
                     <label for="getHashInfo_h">QB种子信息中的信息哈希值:</label>
                     <input type="text" id="getHashInfo_h" placeholder="请输入信息哈希值">
                 </div>
-                <button onclick="callApi('DTU', 'getHashInfo')">调用接口</button>
+                <button onclick="callApi('getHashInfo')">调用接口</button>
                 <div class="result" id="getHashInfo_result"></div>
             </div>
         </div>
@@ -222,7 +220,7 @@
                     <label for="downloaded_h">QB种子信息中的信息哈希值:</label>
                     <input type="text" id="downloaded_h" placeholder="请输入信息哈希值">
                 </div>
-                <button onclick="callApi('DTU', 'downloaded')">调用接口</button>
+                <button onclick="callApi('downloaded')">调用接口</button>
                 <div class="result" id="downloaded_result"></div>
             </div>
 
@@ -234,7 +232,7 @@
                     <label for="torrentUpState_h">QB种子信息中的信息哈希值:</label>
                     <input type="text" id="torrentUpState_h" placeholder="请输入信息哈希值">
                 </div>
-                <button onclick="callApi('DTU', 'torrentUpState')">调用接口</button>
+                <button onclick="callApi('torrentUpState')">调用接口</button>
                 <div class="result" id="torrentUpState_result"></div>
             </div>
         </div>
@@ -248,7 +246,7 @@
                     <label for="reloadHash_h">QB种子信息中的信息哈希值:</label>
                     <input type="text" id="reloadHash_h" placeholder="请输入信息哈希值">
                 </div>
-                <button onclick="callApi('DTU', 'reloadHash')">调用接口</button>
+                <button onclick="callApi('reloadHash')">调用接口</button>
                 <div class="result" id="reloadHash_result"></div>
             </div>
 
@@ -259,7 +257,7 @@
                     <label for="reloadSite_s">目标站点域名:</label>
                     <input type="text" id="reloadSite_s" placeholder="请输入目标站点域名">
                 </div>
-                <button onclick="callApi('DTU', 'reloadSite')">调用接口</button>
+                <button onclick="callApi('reloadSite')">调用接口</button>
                 <div class="result" id="reloadSite_result"></div>
             </div>
         </div>
@@ -276,7 +274,7 @@
                     <label for="change_ns">新站点域名:</label>
                     <input type="text" id="change_ns" placeholder="请输入新站点域名">
                 </div>
-                <button onclick="callApi('DTU', 'change')">调用接口</button>
+                <button onclick="callApi('change')">调用接口</button>
                 <div class="result" id="change_result"></div>
             </div>
 
@@ -291,7 +289,7 @@
                     <label for="addNewSite_ns">新增站点域名:</label>
                     <input type="text" id="addNewSite_ns" placeholder="请输入新增站点域名">
                 </div>
-                <button onclick="callApi('DTU', 'addNewSite')">调用接口</button>
+                <button onclick="callApi('addNewSite')">调用接口</button>
                 <div class="result" id="addNewSite_result"></div>
             </div>
         </div>
@@ -307,7 +305,7 @@
                 <label for="statistics_ym">查询年月 (格式202501):</label>
                 <input type="text" id="statistics_ym" placeholder="请输入查询年月">
             </div>
-            <button onclick="callApi('DTU', 'statistics')">调用接口</button>
+            <button onclick="callApi('statistics')">调用接口</button>
             <div class="result" id="statistics_result"></div>
         </div>
     </div>
@@ -315,7 +313,7 @@
 
 <script>
     // 调用API函数
-    function callApi(module, method) {
+    function callApi(method) {
         // 使用Flask提供的基础地址
         const baseUrl = "{{ request.host_url }}sv/dtu/api";
         let url = baseUrl + '/' + method;
