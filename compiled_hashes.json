@@ -39,7 +39,7 @@
     "./operate_site/cangbao.py": "c19f259481fb12070e8b4babd74397cc",
     "./operate_site/novahd.py": "5c8817129dc94613c8d56a8bc8d6e116",
     "./operate_site/hdpt.py": "3755d8f9c713b8e49883b21feff03a0b",
-    "./operate_site/pterclub.py": "78cea4fe93c9f52c74bd91588d0cec29",
+    "./operate_site/pterclub.py": "a8ef032fe31bfb0e454490015440544d",
     "./operate_site/sbpt.py": "9250469579e5071eb6223cd4bfa5d123",
     "./operate_site/icc2022.py": "2f1e73a20c3eb1e45458cb8c0ac287fd",
     "./operate_site/okpt.py": "218f42317e95b34aa709d853056e214b",
@@ -200,5 +200,5 @@
     "templates/config.html": "bbf2788efce4dce0ebf2bf7257c14ccd",
     "templates/interface.html": "6e2fb102a35905263b2ff02e203f3ad1"
   },
-  "last_git_commit": "50a39801d4290fc90b3c5cb2ccac96b6762537e8"
+  "last_git_commit": "366c29662ac7597f07a22dcc1c8ade4205b56b2f"
 }
