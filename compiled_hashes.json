@@ -47,7 +47,7 @@
     "./operate_site/ptlao.py": "e179fc5da77d8738300a1ddf7e3e7279",
     "./operate_site/hdkyl.py": "bb8c9eff5b1d35d4c81d89c489b6d963",
     "./operate_site/pthome.py": "fb997926602e6f1abfb8e09fab1c85ed",
-    "./operate_site/hdarea.py": "a62bb235cb936095045c28f044960eb3",
+    "./operate_site/hdarea.py": "7bf7358d3730f7881c508cca0aba1b0a",
     "./operate_site/ptfans.py": "4b5b5f263103fefb70e4aceed4042fc9",
     "./operate_site/cspt.py": "b1a3db5b7fa00af4a80542c3e035cd36",
     "./operate_site/yhpp.py": "c7cb57955cbc61ffca22f3f2d2e57aa5",
@@ -200,5 +200,5 @@
     "templates/config.html": "bbf2788efce4dce0ebf2bf7257c14ccd",
     "templates/interface.html": "6e2fb102a35905263b2ff02e203f3ad1"
   },
-  "last_git_commit": "366c29662ac7597f07a22dcc1c8ade4205b56b2f"
+  "last_git_commit": "9a8d4d662ff4f358af771cb777b4713bfb7a92e6"
 }
