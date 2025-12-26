@@ -21,7 +21,7 @@
     "./operate_site/jivon.py": "b0037d331abb6bbfbb1ed4eb53fd7d5f",
     "./operate_site/eastgame.py": "b8577e943fa6b8f972444e2de610541a",
     "./operate_site/upxin.py": "f9ba1e26d4a09bb9f90544bd3c8868eb",
-    "./operate_site/hdvideo.py": "0a1624285b7cbffb416f7b58c06f42cd",
+    "./operate_site/hdvideo.py": "8d9c0c12a4c72867610c67f3ba30e095",
     "./operate_site/joyhd.py": "36201e897a667b0de2efaaf29b32bbd8",
     "./operate_site/muxuege.py": "300536b61da46b154840e8e3490a4533",
     "./operate_site/gtkpw.py": "0fa08d11ed2b999d8f9a79d81c34dc9e",
@@ -85,14 +85,14 @@
     "./operate_site/sanpro.py": "0f6955d4ee4306d8eb261bedaef86b40",
     "./operate_site/zrpt.py": "7898415a119371a7765d37b5aabd1587",
     "./operate_site/ptsbao.py": "1fc3ada37f5e3f53c7e85b4bb967f4e9",
-    "./auto_upload.py": "ac80a95e1e5eef41222aa39b8991bde5",
+    "./auto_upload.py": "bab9e28d37c550d5bef432986ad3148e",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
     "./util/notice.py": "11d09051e6c3cf7a70ad062194198c1b",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
     "./util/media_mapping.py": "a54c173fb6c7a8e89e7006882ffdc3fd",
-    "./util/sqlite_operate.py": "7aae7fbd830baaa8eb319be08f3a8905",
+    "./util/sqlite_operate.py": "13b803dc2987e9254cead00e343c4ec1",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "23009ba0b0082562f6fd0f8138cdb294",
@@ -200,5 +200,5 @@
     "templates/config.html": "bbf2788efce4dce0ebf2bf7257c14ccd",
     "templates/interface.html": "6e2fb102a35905263b2ff02e203f3ad1"
   },
-  "last_git_commit": "40895648c4a89d5dfcd93575556ecbc7fe1c8d47"
+  "last_git_commit": "6b589689a6d2168e511cd95244a06bf37b25e5c9"
 }
