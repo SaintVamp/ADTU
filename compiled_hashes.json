@@ -196,9 +196,10 @@
     "./operate_site/baozi.py": "2d85741e56b21bb3aea094ce982fb0f8",
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
-    "templates/index.html": "3b16193153125b17742c3182a11d677d",
-    "templates/config.html": "bbf2788efce4dce0ebf2bf7257c14ccd",
-    "templates/interface.html": "6e2fb102a35905263b2ff02e203f3ad1"
+    "templates/index.html": "08149c0a9785038a033d48813a8222bc",
+    "templates/config.html": "536b16c1ae0b4db8b60831bd654aca03",
+    "templates/interface.html": "05f77a29b4bdec7ade5a36c1853b3678",
+    "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e"
   },
-  "last_git_commit": "6b589689a6d2168e511cd95244a06bf37b25e5c9"
+  "last_git_commit": "f24ed006e1ff41e899e440c6a4c72e8ddab33807"
 }
