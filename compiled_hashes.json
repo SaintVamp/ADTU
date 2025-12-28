@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "f7e3e5def6a69ced1796ec31172adb38",
+    "./atut_serv.py": "2105be52e6d445106046c8316a279bc7",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -201,5 +201,5 @@
     "templates/interface.html": "05f77a29b4bdec7ade5a36c1853b3678",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e"
   },
-  "last_git_commit": "a7fad5c79f8bbd8b0bce536946ca5b951fd16c17"
+  "last_git_commit": "b67e892bc32351c0ce4f9cf63f3f6724f3d6ea7b"
 }
