@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "2105be52e6d445106046c8316a279bc7",
+    "./atut_serv.py": "ca49941bf41cfab09cfec073f2c0309a",
     "./get_rss.py": "190bcef0936007d6546b6a4482ebb501",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -186,7 +186,7 @@
     "release/commit.sh": "46705d88922f97cc01043452b3fbaf0b",
     "release/update.sh": "cf2948ec8af06a90b8eceaeb81cb4c26",
     "release/run.py": "7eeb69f695157b8831b8d3c58b6e2e3a",
-    "release/run.sh": "7cc06b7258d0031a4353672dcb1fc3fb",
+    "release/run.sh": "8e240a599c0fc4873ff4f6e6be53dbe5",
     "./operate_site/ptskit.py": "b0b16eb93af26e3545e4634e0a6bd69a",
     "model_config/each_site.toml": "9cdd6665435d67a55cd1e7e96eea0892",
     "model_config/site/www.ptskit.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -201,5 +201,5 @@
     "templates/interface.html": "63d9003c65e378bd214e31c73afeec29",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e"
   },
-  "last_git_commit": "2ce8094f36fe4efa840822306b9ae55186883ea6"
+  "last_git_commit": "95653b0e9ca180ae368154ebed84315350b0f314"
 }

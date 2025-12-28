@@ -17,21 +17,29 @@ select_best_remote() {
 git_pull_best() {
     best_remote=$(select_best_remote)
     echo "Using remote: $best_remote"
-    git pull "$best_remote" master  # 根据实际情况调整分支名
-}
-git_pull_best
-cp /auto_dtu/model_config/model-config.toml /auto_dtu/config/.
-cp /auto_dtu/model_config/readme_dtu.txt /auto_dtu/config/.
-python3 run.py &
-sleep 30
-while true; do
-  if [ -f /auto_dtu/upgrade ]; then
-    git_pull_best
+    git pull "$best_remote" master
     cp /auto_dtu/model_config/model-config.toml /auto_dtu/config/.
     cp /auto_dtu/model_config/readme_dtu.txt /auto_dtu/config/.
-    ps | grep "python3 run.py" | grep -v grep | awk '{print $1}' | xargs kill -9
-    python3 run.py &
-    rm /auto_dtu/upgrade
-  fi
-  sleep 300
-done
+}
+
+verify_app() {
+    echo "ready" > /auto_dtu/state
+    while [ "$(cat /auto_dtu/state 2>/dev/null)" != "running" ]; do
+        pkill -f "python3 run.py" 2>/dev/null
+        python3 run.py &
+        sleep 60
+    done
+}
+
+git_pull_best
+if verify_app; then
+  while true; do
+    if [ -f /auto_dtu/upgrade ]; then
+      git_pull_best
+      pkill -f "python3 run.py" 2>/dev/null
+      python3 run.py &
+      rm /auto_dtu/upgrade
+    fi
+    sleep 300
+  done
+fi
