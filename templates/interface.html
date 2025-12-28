@@ -313,7 +313,7 @@
     // 调用API函数
     function callApi(method) {
         // 使用Flask提供的基础地址
-        const baseUrl = "{{ request.host_url }}sv/dtu/api";
+        const baseUrl = "sv/dtu/api";
         let url = baseUrl + '/' + method;
 
         let options = {
