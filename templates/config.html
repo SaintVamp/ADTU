@@ -493,6 +493,37 @@
                 </div>
             </div>
         </div>
+
+        <!-- CookieCloud配置 -->
+        <div class="section">
+            <div class="section-title">CookieCloud配置</div>
+            <div class="form-group">
+                <div class="form-item">
+                    <label for="cc_url">服务器地址</label>
+                    <input type="text" id="cc_url" name="cc_server.url" value="">
+                    <div class="help-text">CC插件填写的服务器地址</div>
+                </div>
+                <div class="form-item">
+                    <label for="cc_key">用户Key</label>
+                    <input type="text" id="cc_key" name="cc_server.key" value="">
+                    <div class="help-text">CC插件生成的用户Key</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-item">
+                    <label for="cc_password">端对端加密密码</label>
+                    <input type="text" id="cc_password" name="cc_server.password" value="">
+                    <div class="help-text">CC插件生成的端到端密码</div>
+                </div>
+                <div class="form-item">
+                    <label for="forceSync">强制同步</label>
+                    <button type="button" class="btn" id="forceSync" onclick="getCookieCloud()">同步</button>
+                    <div class="help-text">首次配置完保存好三项设置，可人工点击同步按钮触发</div>
+                    <div class="help-text">后续每次系统启动后会在随机整点开始CC自动同步，并间隔24小时重复执行无需人工干预</div>
+                </div>
+            </div>
+        </div>
+
         <!-- 站点综合配置 -->
         <div class="section">
             <div class="section-title">站点综合配置</div>
@@ -918,6 +949,11 @@
             document.getElementById('skip_checking').checked = config.qb_server.skip_checking;
             document.getElementById('super_seeding').checked = config.qb_server.super_seeding !== undefined ? config.qb_server.super_seeding : true;
         }
+        if (config.cc_server) {
+            document.getElementById('cc_url').value = config.cc_server.url;
+            document.getElementById('cc_key').value = config.cc_server.key;
+            document.getElementById('cc_password').value = config.cc_server.password;
+        }
         if (config.image_bed) {
             document.getElementById('bed_use').value = config.image_bed.bed_use;
             document.getElementById('picture_type').value = config.image_bed.picture_type;
@@ -1011,6 +1047,28 @@
             forbidBtn.disabled = true;
         }
     });
+
+    function getCookieCloud() {
+        fetch(baseUrl + '/getCookieCloud', {
+            method: 'GET'
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('拉取CC配置失败');
+            })
+            .then(data => {
+                if (data.code === 200) {
+                    alert(data.msg);
+                } else {
+                    alert(data.msg);
+                }
+            })
+            .catch(error => {
+                alert('错误，' + error.message);
+            });
+    }
 
     function openForbidConfig() {
         if (!currentSelectedSite) {

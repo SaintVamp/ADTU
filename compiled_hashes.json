@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "ca49941bf41cfab09cfec073f2c0309a",
+    "./atut_serv.py": "a9ddce8f16a6ce730701775d76dd88e5",
     "./get_rss.py": "1949ccd77a3e6ff1270a592ab5e7de7c",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -95,8 +95,8 @@
     "./util/sqlite_operate.py": "13b803dc2987e9254cead00e343c4ec1",
     "./util/authentication.py": "e141d122cdfe0646376b2c88921b3a6f",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "2a3558d28686470db1c3dc587efd2d14",
-    "model_config/model-config-dtu.toml": "93a40743c705fd7e9f954b6f72c1adf0",
+    "./util/tools.py": "9062d4ef96fb598a4799e8547c58dd64",
+    "model_config/model-config-dtu.toml": "59c7c64171f7f9c9d350b347111cc7bb",
     "model_config/readme_dtu.txt": "749dd19c33fac8d190ce5d1072e4f829",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/site/longpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -197,9 +197,9 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
     "templates/index.html": "08149c0a9785038a033d48813a8222bc",
-    "templates/config.html": "e890e69f8ed4f2ccadb3990b7a2bbede",
+    "templates/config.html": "e53936981d03b5ff86917b9fefd56222",
     "templates/interface.html": "0097c2d3fd315539dd2b4784263f370d",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e"
   },
-  "last_git_commit": "8bba6a3c51c5827b937635281d2360639ae99333"
+  "last_git_commit": "3a0c6782fbf8b65645e08bbfb66bddfa6ed798f6"
 }

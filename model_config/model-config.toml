@@ -43,6 +43,11 @@ up_queue_max = 50
 up_queue_min = 4
 control_speed = false
 
+[cc_server]                                         #CookieCloud配置，同浏览器插件配置
+url = ""                                            #服务器地址
+key = ""                                            #用户KEY/UUID
+password = ""                                       #端对端加密密码
+
 [domain]                                            #当网站有备用域名时，自行修改域名映射
 "www.agsvpt.com" = "www.agsvpt.com"
 "ubits.club" = "ubits.club"
