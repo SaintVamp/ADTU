@@ -124,16 +124,30 @@
                 min-width: 100%;
             }
         }
+
+        .back-button {
+            background-color: #95a5a6;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #7f8c8d;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>自动转发工具接口调用</h1>
-
-
     <div class="api-section">
-        <h2 class="section-title">接口列表</h2>
-
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="section-title">接口列表</h2>
+            <a href="/" class="back-button">返回首页</a>
+        </div>
         <div class="interface-row">
             <!-- forceLimit -->
             <div class="interface-container">
@@ -175,8 +189,6 @@
                 <button onclick="callApi('downloaded')">调用接口</button>
                 <div class="result" id="downloaded_result"></div>
             </div>
-
-
             <!-- torrentUpState -->
             <div class="interface-container">
                 <div class="interface-title">种子发布情况 (torrentUpState)</div>
@@ -188,8 +200,6 @@
                 <div class="result" id="torrentUpState_result"></div>
             </div>
         </div>
-
-
         <div class="interface-row">
             <!-- forceDownTorrent -->
             <div class="interface-container">
@@ -220,8 +230,6 @@
                 <div class="result" id="reload_result"></div>
             </div>
         </div>
-
-
         <div class="interface-row">
             <!-- reloadHash -->
             <div class="interface-container">
@@ -233,7 +241,6 @@
                 <button onclick="callApi('reloadHash')">调用接口</button>
                 <div class="result" id="reloadHash_result"></div>
             </div>
-
             <!-- reloadSite -->
             <div class="interface-container">
                 <div class="interface-title">对目标站重发所有种子 (reloadSite)</div>
@@ -245,7 +252,6 @@
                 <div class="result" id="reloadSite_result"></div>
             </div>
         </div>
-
         <div class="interface-row">
             <!-- change -->
             <div class="interface-container">
@@ -261,7 +267,6 @@
                 <button onclick="callApi('change')">调用接口</button>
                 <div class="result" id="change_result"></div>
             </div>
-
             <!-- addNewSite -->
             <div class="interface-container">
                 <div class="interface-title">新增站点快速增加本地发布任务 (addNewSite)</div>
@@ -277,8 +282,6 @@
                 <div class="result" id="addNewSite_result"></div>
             </div>
         </div>
-
-
         <!-- getHashInfo -->
         <div class="interface-container">
             <div class="interface-title">获取源种存储信息 (getHashInfo)</div>
@@ -291,7 +294,6 @@
             <button onclick="callApi('getHashInfo')">调用接口</button>
             <div class="result" id="getHashInfo_result"></div>
         </div>
-
         <!-- statistics -->
         <div class="interface-container">
             <div class="interface-title">统计站点发布数据 (statistics)</div>

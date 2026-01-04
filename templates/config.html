@@ -161,12 +161,22 @@
             background-color: #e0a800;
         }
 
+        .back-button {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #7f8c8d;
+        }
+
         @media (max-width: 768px) {
             .form-item {
                 min-width: 100%;
                 margin-right: 0;
             }
         }
+
     </style>
 </head>
 <body>
@@ -180,6 +190,7 @@
         <button type="button" class="btn" id="saveBtn" onclick="saveConfig()">页面保存配置</button>
         <button type="button" class="btn btn-red" id="backupBtn" onclick="backupConfig()">后端备份配置</button>
         <button type="button" class="btn btn-green" id="restoreBtn" onclick="restoreConfig()">后端恢复配置</button>
+        <button type="button" class="btn back-button" onclick="window.location.href='/'">返回首页</button>
     </div>
     <form id="configForm" style="display: none;">
         <!-- 基本配置 -->
