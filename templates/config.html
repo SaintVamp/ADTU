@@ -1376,6 +1376,21 @@
             new_config.qb_server.super_seeding = this.checked;
         });
 
+        document.getElementById('cc_url').addEventListener('blur', function () {
+            if (!new_config.cc_server) new_config.cc_server = {};
+            new_config.cc_server.url = this.value;
+        });
+
+        document.getElementById('cc_key').addEventListener('blur', function () {
+            if (!new_config.cc_server) new_config.cc_server = {};
+            new_config.cc_server.key = this.value;
+        });
+
+        document.getElementById('cc_password').addEventListener('blur', function () {
+            if (!new_config.cc_server) new_config.cc_server = {};
+            new_config.cc_server.password = this.value;
+        });
+
         document.getElementById('bed_use').addEventListener('blur', function () {
             if (!new_config.image_bed) new_config.image_bed = {};
             new_config.image_bed.bed_use = this.value;
