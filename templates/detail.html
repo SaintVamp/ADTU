@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>转发工具接口调用</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .api-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+
+        .error {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .success {
+            background-color: rgb(25, 106, 13);
+            color: white;
+        }
+
+
+        .back-button {
+            background-color: #95a5a6;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #7f8c8d;
+        }
+
+        .torrent-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 800px;
+        }
+
+        .torrent-table th,
+        .torrent-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        .torrent-table th:last-child,
+        .torrent-table td:last-child {
+            border-right: none;
+        }
+
+        .torrent-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .torrent-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .torrent-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .torrent-table tr.downloading {
+            background-color: #e0e0e0;
+        }
+
+        .torrent-table tr.downloaded-not-uploaded {
+            background-color: #ffffcc;
+        }
+
+        .torrent-table tr.uploaded {
+            background-color: #ccffcc;
+        }
+
+        .torrent-table tr.skipped {
+            background-color: #ffcccc;
+        }
+
+        .torrent-table tr:hover.downloading {
+            background-color: #d0d0d0;
+        }
+
+        .torrent-table tr:hover.downloaded-not-uploaded {
+            background-color: #ffff99;
+        }
+
+        .torrent-table tr:hover.uploaded {
+            background-color: #99ff99;
+        }
+
+        .torrent-table tr:hover.skipped {
+            background-color: #ff9999;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .remark-textarea {
+            width: 100%;
+            height: 60px; /* 大约显示3行文本的高度 */
+            border: none;
+            resize: none;
+            overflow-y: auto; /* 启用垂直滚动条 */
+            font-size: 12px;
+            line-height: 1.4;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: transparent;
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+
+        .hash-cell {
+            word-break: break-all; /* 允许在任意字符间换行 */
+            word-wrap: break-word; /* 确保长单词和URL地址正常换行 */
+            white-space: normal; /* 允许正常的空白符处理和换行 */
+            max-width: 110px; /* 设置最大宽度 */
+            min-width: 110px; /* 设置最小宽度 */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>自动转发工具发布详情</h1>
+    <div class="api-section">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="section-title">种子状态列表</h2>
+            <a href="/" class="back-button">返回首页</a>
+        </div>
+        <div class="table-container">
+            <table id="torrentTable" class="torrent-table">
+                <thead>
+                <tr>
+                    <th>哈希值</th>
+                    <th>源站</th>
+                    <th>目标站</th>
+                    <th>下载状态</th>
+                    <th>上传状态</th>
+                    <th>说明</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="torrentTableBody">
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button onclick="loadTorrentData('prev')">上一页</button>
+                <button onclick="loadTorrentData('next')">下一页</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    document.addEventListener('DOMContentLoaded', function () {
+        loadTorrentData('first');
+    });
+
+    function loadTorrentData(direction) {
+        if (direction === 'next') {
+            currentPage++;
+        } else if (direction === 'prev') {
+            currentPage--;
+            if (currentPage < 1) {
+                currentPage = 1;
+            }
+        } else if (direction === 'first') {
+            currentPage = 1;
+        }
+        callApi()
+    }
+
+    function callApi() {
+        const url = `sv/dtu/api/torrentsStatus?p=${currentPage}`;
+
+        fetch(url, {
+            method: 'GET'
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('获取种子信息失败');
+            })
+            .then(data => {
+                if (data.code === 200) {
+                    renderTable(JSON.parse(data.msg) || []);
+                } else {
+                    document.getElementById('torrentTableBody').innerHTML =
+                        `<tr><td colspan="6">加载数据失败: ${data.msg}</td></tr>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('torrentTableBody').innerHTML =
+                    `<tr><td colspan="6">加载数据出错: ${error.message}</td></tr>`;
+            });
+    }
+
+    function renderTable(torrentList) {
+        const tableBody = document.getElementById('torrentTableBody');
+
+        if (!torrentList || torrentList.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="6">暂无数据</td></tr>';
+            return;
+        }
+
+        let html = '';
+        torrentList.forEach(item => {
+            let rowClass = '';
+            let text_flag = 0;
+            if (item.downloaded === 0) {
+                rowClass = 'downloading';
+                text_flag = 1;
+            } else if (item.downloaded === 1 && item.uploaded === 0) {
+                rowClass = 'downloaded-not-uploaded';
+            } else if (item.uploaded === 1) {
+                rowClass = 'uploaded';
+            } else if (item.uploaded === 2) {
+                rowClass = 'skipped';
+                text_flag = 2
+            }
+            let actionButton = '';
+            if (text_flag !== 0) {
+                actionButton = `<button class="action-btn" onclick="performAction(${text_flag},'${item.source_hash}','${item.target_site}')">${getActionText(text_flag)}</button>`;
+            }
+            html += `<tr class="${rowClass}">
+            <td class="hash-cell">${item.source_hash || ''}</td>
+            <td>${getSiteText(item.source_site) || ''}</td>
+            <td>${getSiteText(item.target_site) || ''}</td>
+            <td>${getDownStatusText(item.downloaded)}</td>
+            <td>${getUpStatusText(item.uploaded)}</td>
+            <td><textarea class="remark-textarea" readonly>${item.remark || ''}</textarea></td>
+            <td>${actionButton}</td>
+        </tr>`;
+        });
+        tableBody.innerHTML = html;
+    }
+
+
+    function getSiteText(siteCode) {
+        const siteMap = {
+            'www.agsvpt.com': '末日',
+            'ubits.club': '优堡',
+            'www.hdkyl.in': '麒麟',
+            'carpt.net': '车站',
+            'ptlgs.org': '劳改所',
+            'zmpt.cc': '织梦',
+            'raingfh.top': '雨站',
+            'lemonhd.club': '柠檬',
+            'njtupt.top': '南工',
+            'pt.btschool.club': '学校',
+            'www.qingwapt.com': '青蛙',
+            'hdfans.org': '红豆饭',
+            'hdarea.club': '好大',
+            'pterclub.net': '猫站',
+            'kufei.org': '库非',
+            'pt.hdclone.org': '克隆',
+            'rousi.zip': '肉丝',
+            'www.icc2022.com': '冰淇淋',
+            '1ptba.com': '一吧',
+            'ptsbao.club': '烧包',
+            'www.devtracker.me': '做我',
+            'cyanbug.net': '青虫',
+            'pandapt.net': '熊猫',
+            'totheglory.im': '套套',
+            'www.ptzone.xyz': '私区',
+            'pt.soulvoice.club': '铃音',
+            'pt.0ff.cc': '农场',
+            'hdhome.org': '家园',
+            'hdtime.org': '时光',
+            'pt.upxin.net': '好多油',
+            'www.joyhd.net': '开心',
+            'www.okpt.net': 'OK',
+            'www.oshen.win': '欧申',
+            'ptchina.org': '铂金',
+            'pthome.net': '高清家',
+            'ptcafe.club': '咖啡',
+            'crabpt.vip': '蟹黄堡',
+            'www.dragonhd.xyz': '龙之家',
+            'hspt.club': '回声',
+            'hdbao.cc': '海宝',
+            'www.ptlover.cc': '爱乐',
+            'ptfans.cc': '铂粉',
+            'pt.gtkpw.xyz': '搞铁',
+            'hdpt.xyz': '明教',
+            'www.hitpt.com': '百川',
+            'sanpro.pw': '小伞',
+            'torrenthub.club': '种子库',
+            'pt.xingyungept.org': '星陨阁',
+            'cspt.top': '财神',
+            'tmpt.top': '唐门',
+            'hudbt.hust.edu.cn': '蝴蝶',
+            'nanyangpt.com': '南洋',
+            'tjupt.org': 'TJUPT',
+            'wintersakura.net': '冬樱',
+            'et8.org': '吹风',
+            'pt.eastgame.org': '吐鲁番',
+            'hdvideo.one': '海威',
+            'hdcity.city': 'HDCITY',
+            'www.hddolby.com': '杜比',
+            '52pt.site': '五二',
+            'audiences.me': '人人',
+            'pt.ying.us.kg': '樱花',
+            'sewerpt.com': '下水道',
+            'lemonhd.net': '柠檬甜',
+            'bilibili.download': '轨道炮',
+            'pt.novahd.top': '新星',
+            'duckboobee.org': '三月',
+            'pt.luckpt.de': '幸运',
+            'pt.lajidui.top': '垃圾堆',
+            '13city.org': '十三城',
+            'zrpt.cc': '自然',
+            'www.yhpp.cc': '昆仑',
+            'pt.muxuege.org': '慕雪阁',
+            'cc.mypt.cc': '我的',
+            'nex.jivon.de': '幻境',
+            'sbpt.link': '沙比',
+            'pt.aling.de': '爱玲',
+            'cangbao.ge': '藏宝',
+            'dubhe.site': '天枢',
+            'ptlao.top': '忘年',
+            'longpt.org': '长久',
+            'www.ptskit.org': '铂金短',
+            'www.tangpt.top': '躺平',
+            'pt.baozi.cc': '包子'
+        };
+        return siteMap[siteCode] || siteCode;
+    }
+
+
+    function getDownStatusText(status) {
+        const statusMap = {
+            0: '下载中',
+            1: '已下载'
+        };
+        return statusMap[status] || status;
+    }
+
+    function getUpStatusText(status) {
+        const statusMap = {
+            0: '未发布',
+            1: '已发布',
+            2: '已跳过'
+        };
+        return statusMap[status] || status;
+    }
+
+    function getActionText(status) {
+        if (status === 1) {
+            return '通知下载完成';
+        } else if (status === 2) {
+            return '通知重发';
+        }
+        return '';
+    }
+
+    function performAction(flag, hash, target_site) {
+        let url = ''
+        if (flag === 1) {
+            url = `sv/dtu/api/downloaded?h=${hash}`;
+        } else if (flag === 2) {
+            url = `sv/dtu/api/reload?h=${hash}&ts=${target_site}`;
+        }
+        fetch(url, {
+            method: 'GET'
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('请求失败');
+            })
+            .then(data => {
+                if (data.code === 200) {
+                    callApi();
+                }
+            })
+    }
+
+
+</script>
+</body>
+</html>
