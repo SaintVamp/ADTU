@@ -179,58 +179,6 @@
                 <button onclick="callApi('delTorrent')">调用接口</button>
                 <div class="result" id="delTorrent_result"></div>
             </div>
-            <!-- downloaded -->
-            <div class="interface-container">
-                <div class="interface-title">源种完成下载通知 (downloaded)</div>
-                <div class="form-group">
-                    <label for="downloaded_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="downloaded_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('downloaded')">调用接口</button>
-                <div class="result" id="downloaded_result"></div>
-            </div>
-            <!-- torrentUpState -->
-            <div class="interface-container">
-                <div class="interface-title">种子发布情况 (torrentUpState)</div>
-                <div class="form-group">
-                    <label for="torrentUpState_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="torrentUpState_h" placeholder="请输入信息哈希值">
-                </div>
-                <button onclick="callApi('torrentUpState')">调用接口</button>
-                <div class="result" id="torrentUpState_result"></div>
-            </div>
-        </div>
-        <div class="interface-row">
-            <!-- forceDownTorrent -->
-            <div class="interface-container">
-                <div class="interface-title">强制下载种子 (forceDownTorrent)</div>
-                <div class="form-group">
-                    <label for="forceDownTorrent_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="forceDownTorrent_h" placeholder="请输入信息哈希值">
-                </div>
-                <div class="form-group">
-                    <label for="forceDownTorrent_u">种子详情页的下载链接:</label>
-                    <input type="text" id="forceDownTorrent_u" placeholder="请输入下载链接">
-                </div>
-                <button onclick="callApi('forceDownTorrent')">调用接口</button>
-                <div class="result" id="forceDownTorrent_result"></div>
-            </div>
-            <!-- reload -->
-            <div class="interface-container">
-                <div class="interface-title">目标站重发 (reload)</div>
-                <div class="form-group">
-                    <label for="reload_h">QB种子信息中的信息哈希值:</label>
-                    <input type="text" id="reload_h" placeholder="请输入信息哈希值">
-                </div>
-                <div class="form-group">
-                    <label for="reload_ts">目标站点域名:</label>
-                    <input type="text" id="reload_ts" placeholder="请输入目标站点域名">
-                </div>
-                <button onclick="callApi('reload')">调用接口</button>
-                <div class="result" id="reload_result"></div>
-            </div>
-        </div>
-        <div class="interface-row">
             <!-- reloadHash -->
             <div class="interface-container">
                 <div class="interface-title">源站种子重发 (reloadHash)</div>
@@ -253,6 +201,20 @@
             </div>
         </div>
         <div class="interface-row">
+            <!-- forceDownTorrent -->
+            <div class="interface-container">
+                <div class="interface-title">强制下载种子 (forceDownTorrent)</div>
+                <div class="form-group">
+                    <label for="forceDownTorrent_h">QB种子信息中的信息哈希值:</label>
+                    <input type="text" id="forceDownTorrent_h" placeholder="请输入信息哈希值">
+                </div>
+                <div class="form-group">
+                    <label for="forceDownTorrent_u">种子详情页的下载链接:</label>
+                    <input type="text" id="forceDownTorrent_u" placeholder="请输入下载链接">
+                </div>
+                <button onclick="callApi('forceDownTorrent')">调用接口</button>
+                <div class="result" id="forceDownTorrent_result"></div>
+            </div>
             <!-- change -->
             <div class="interface-container">
                 <div class="interface-title">站点替换接口 (change)</div>
@@ -357,22 +319,6 @@
                     },
                     body: JSON.stringify(getHashInfoData)
                 };
-                break;
-
-            case 'downloaded':
-                const h_downloaded = document.getElementById('downloaded_h').value;
-                url += `?h=${encodeURIComponent(h_downloaded)}`;
-                break;
-
-            case 'reload':
-                const h_reload = document.getElementById('reload_h').value;
-                const ts_reload = document.getElementById('reload_ts').value;
-                url += `?h=${encodeURIComponent(h_reload)}&ts=${encodeURIComponent(ts_reload)}`;
-                break;
-
-            case 'torrentUpState':
-                const h_torrentUpState = document.getElementById('torrentUpState_h').value;
-                url += `?h=${encodeURIComponent(h_torrentUpState)}`;
                 break;
 
             case 'reloadHash':
