@@ -197,9 +197,9 @@
     "model_config/site/pt.baozi.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
     "templates/index.html": "08149c0a9785038a033d48813a8222bc",
-    "templates/config.html": "68b3453d064e57d7833b6c4154ef429a",
+    "templates/config.html": "ef67c8a9392adee5f406815b870dad5a",
     "templates/interface.html": "0097c2d3fd315539dd2b4784263f370d",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e"
   },
-  "last_git_commit": "1a0947ad373493b76cc77cee8ad17571a47b8e13"
+  "last_git_commit": "656a7786767abc7d430d9e4e873fb57ad09501d4"
 }
