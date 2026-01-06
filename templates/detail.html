@@ -358,8 +358,8 @@
             <td class="hash-cell">${item.source_hash || ''}</td>
             <td>${getSiteText(item.source_site) || ''}</td>
             <td>${getSiteText(item.target_site) || ''}</td>
-            <td>${getDownStatusText(item.downloaded)}</td>
-            <td>${getUpStatusText(item.uploaded)}</td>
+            <td>${getDownStatusText(item.downloaded, item.timestamp)}</td>
+            <td>${getUpStatusText(item.uploaded, item.up_ts)}</td>
             <td><textarea class="remark-textarea" readonly>${item.remark || ''}</textarea></td>
             <td>${actionButton}</td>
         </tr>`;
@@ -458,22 +458,36 @@
         return siteMap[siteCode] || siteCode;
     }
 
+    function timestampToUTC8(timestamp) {
+        const date = new Date(timestamp * 1000);
+        return date.toLocaleString('zh-CN', {
+            timeZone: 'Asia/Shanghai', // UTC+8 时区
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+    }
 
-    function getDownStatusText(status) {
+
+    function getDownStatusText(status, ts) {
         const statusMap = {
             0: '下载中',
             1: '已下载'
         };
-        return statusMap[status] || status;
+        return statusMap[status] + '<br>' + timestampToUTC8(ts) || status;
     }
 
-    function getUpStatusText(status) {
+    function getUpStatusText(status, ts) {
         const statusMap = {
             0: '未发布',
             1: '已发布',
             2: '已跳过'
         };
-        return statusMap[status] || status;
+        return statusMap[status] + '<br>' + timestampToUTC8(ts) || status;
     }
 
     function getActionText(status) {
