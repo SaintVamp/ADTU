@@ -92,7 +92,7 @@
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
     "./util/media_mapping.py": "a54c173fb6c7a8e89e7006882ffdc3fd",
-    "./util/sqlite_operate.py": "7d160e9486e81dd4ecb803fc5561ff1c",
+    "./util/sqlite_operate.py": "fdd957d90f5705225fb9705e7a901ac8",
     "./util/authentication.py": "84ab3ac9101b567f6049fb65ebb5bb13",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "e6b878ee060b845b7a2c10d79b4859ec",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "428c5b73b78256981f026c2d5b42919c"
   },
-  "last_git_commit": "50bed41a630b78826abd9cabd0ad266231e042d3"
+  "last_git_commit": "c1df8da5ce647c1cc6e553b48d6c7e4ed0aee185"
 }
