@@ -108,6 +108,12 @@
             margin-top: 3px;
         }
 
+        .text {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 4px;
+        }
+
         .btn-container {
             text-align: center;
             margin-top: 30px;
@@ -497,6 +503,7 @@
         <!-- CookieCloud配置 -->
         <div class="section">
             <div class="section-title">CookieCloud配置</div>
+            <div class="text">每次系统启动后会在随机整点开始CC自动同步，并间隔24小时重复执行无需人工干预。也可人工点击同步按钮触发自动保存</div>
             <div class="form-group">
                 <div class="form-item">
                     <label for="cc_url">服务器地址</label>
@@ -518,8 +525,7 @@
                 <div class="form-item">
                     <label for="forceSync">强制同步</label>
                     <button type="button" class="btn" id="forceSync" onclick="getCookieCloud()">同步</button>
-                    <div class="help-text">首次配置完保存好三项设置，可人工点击同步按钮触发</div>
-                    <div class="help-text">后续每次系统启动后会在随机整点开始CC自动同步，并间隔24小时重复执行无需人工干预</div>
+                    <div class="help-text">人工强制拉取cookie信息写入配置文件。</div>
                 </div>
             </div>
         </div>
