@@ -85,7 +85,7 @@
     "./operate_site/sanpro.py": "0f6955d4ee4306d8eb261bedaef86b40",
     "./operate_site/zrpt.py": "7898415a119371a7765d37b5aabd1587",
     "./operate_site/ptsbao.py": "1fc3ada37f5e3f53c7e85b4bb967f4e9",
-    "./auto_upload.py": "61f08829c3d02e7043005ec2c74f1bee",
+    "./auto_upload.py": "81415e0f4459d95638d453f6e291cfaa",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
     "./util/notice.py": "6ec671bf8d254da621d795c6f834f3a5",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca"
   },
-  "last_git_commit": "9e83dac1c3fb068a86f9a816cac1d02b23ff0d4e"
+  "last_git_commit": "ec1f6a133fff18b8190d689c7647024086fed6bf"
 }
