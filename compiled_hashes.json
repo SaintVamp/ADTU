@@ -90,7 +90,7 @@
     "./util/notice.py": "6ec671bf8d254da621d795c6f834f3a5",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
-    "./util/change_factory.py": "3ae6834be34622a0fcc89d3c1cec114e",
+    "./util/change_factory.py": "5d60227c5cae243e312672ab658f6c1f",
     "./util/media_mapping.py": "a54c173fb6c7a8e89e7006882ffdc3fd",
     "./util/sqlite_operate.py": "597c43ca6f6e8b625e5d8281d173f809",
     "./util/authentication.py": "84ab3ac9101b567f6049fb65ebb5bb13",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca"
   },
-  "last_git_commit": "0e21f5ae75dd823eaced065cb777d1b513e90801"
+  "last_git_commit": "173aa2c39957e5670906688dde2b203b3aa2108e"
 }
