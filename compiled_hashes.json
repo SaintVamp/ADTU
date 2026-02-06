@@ -21,7 +21,7 @@
     "./operate_site/jivon.py": "b0037d331abb6bbfbb1ed4eb53fd7d5f",
     "./operate_site/eastgame.py": "b8577e943fa6b8f972444e2de610541a",
     "./operate_site/upxin.py": "f9ba1e26d4a09bb9f90544bd3c8868eb",
-    "./operate_site/hdvideo.py": "8d9c0c12a4c72867610c67f3ba30e095",
+    "./operate_site/hdvideo.py": "7b5b6c172f378b35cb181621e18d8dc3",
     "./operate_site/joyhd.py": "36201e897a667b0de2efaaf29b32bbd8",
     "./operate_site/muxuege.py": "300536b61da46b154840e8e3490a4533",
     "./operate_site/gtkpw.py": "0fa08d11ed2b999d8f9a79d81c34dc9e",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca"
   },
-  "last_git_commit": "1a2f28cb824dd15486a49e0bc8950a052318c856"
+  "last_git_commit": "0f625b68fb529a27b8a081f78c91f02d57e2235a"
 }
