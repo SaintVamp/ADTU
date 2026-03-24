@@ -80,7 +80,7 @@
     "./operate_site/hspt.py": "c77598d044d4053dc387f5b3cbb195ea",
     "./operate_site/lajidui.py": "56c26c0bc585926b2db6eda8b59d54a1",
     "./operate_site/leaves.py": "d4df76a012ed34717dc9777b423f6a1e",
-    "./operate_site/luckpt.py": "608f1f7374a0696583ecd2ec4fc6a9fb",
+    "./operate_site/luckpt.py": "7df6eb266d6bdfcd7f0ce04d555e4a36",
     "./operate_site/nanyangpt.py": "6d34c95df10dab1a28f300e45b56a782",
     "./operate_site/sanpro.py": "620f9723857f75abbc15e1edcd78655b",
     "./operate_site/zrpt.py": "f56f0c394cbc27e81ff1eb758fdd015f",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca"
   },
-  "last_git_commit": "868b28d7fc84650b00169fa576964b1645ff5741"
+  "last_git_commit": "ce5b5fae1f2ab883e12923c8f25b5956d152dd30"
 }
