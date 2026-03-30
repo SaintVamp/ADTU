@@ -85,7 +85,7 @@
     "./operate_site/sanpro.py": "620f9723857f75abbc15e1edcd78655b",
     "./operate_site/zrpt.py": "f56f0c394cbc27e81ff1eb758fdd015f",
     "./operate_site/ptsbao.py": "a098270179100155f33d89c5a67fb3d8",
-    "./auto_upload.py": "e5693724393ebbe6f7c6a43dacd9abd7",
+    "./auto_upload.py": "0f999e5dfdf3baa1fbce6e26489d9a8c",
     "./util/site_config.py": "aa89c5f5050af3ec936b6fd61581a195",
     "./util/notice.py": "6ec671bf8d254da621d795c6f834f3a5",
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
@@ -95,7 +95,7 @@
     "./util/sqlite_operate.py": "b2a3d45bed30a512d5c9122fcaad0880",
     "./util/authentication.py": "84ab3ac9101b567f6049fb65ebb5bb13",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
-    "./util/tools.py": "c4fb94138457d02a6c2a859ee1536966",
+    "./util/tools.py": "22c55ec373c1cb318d5759eca4561040",
     "model_config/model-config-dtu.toml": "59c7c64171f7f9c9d350b347111cc7bb",
     "model_config/readme_dtu.txt": "749dd19c33fac8d190ce5d1072e4f829",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -202,5 +202,5 @@
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca"
   },
-  "last_git_commit": "0f0e46e7f2afda00c3e95b6d751acccb532b64dd"
+  "last_git_commit": "27715180653787a57dca5c6364250087b345d48f"
 }
