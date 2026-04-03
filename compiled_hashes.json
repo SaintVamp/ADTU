@@ -96,7 +96,7 @@
     "./util/authentication.py": "f25f3f1a71bfda1efb4578df6fd58640",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "3f77b5b5733bc79c80b9063aa72b4302",
-    "model_config/model-config-dtu.toml": "59c7c64171f7f9c9d350b347111cc7bb",
+    "model_config/model-config-dtu.toml": "10598e7a7a0b45900003126c818cdaf5",
     "model_config/readme_dtu.txt": "749dd19c33fac8d190ce5d1072e4f829",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/site/longpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -204,5 +204,5 @@
     "./operate_site/hxpt.py": "91b581aa3e6d2b3f143f9937bbdd3595",
     "model_config/site/www.hxpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "4e04506c49547e66a06925e0945296aa849b7d67"
+  "last_git_commit": "9adb90c3ba290133090e5d7e53b08d2941fbef99"
 }
