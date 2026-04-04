@@ -47,7 +47,7 @@
     "./operate_site/ptlao.py": "e635a6612c1d449a6d5449139f408849",
     "./operate_site/hdkyl.py": "8b6be883827b16d4f6a1efee3babc084",
     "./operate_site/pthome.py": "cbe8fa26307a2c53c7ffe44c7e88bb1e",
-    "./operate_site/hdarea.py": "ef39a7aab1f46fa85d2f55716f36b6be",
+    "./operate_site/hdarea.py": "ff777aafaf479f4d02b62a56e5ebb54a",
     "./operate_site/ptfans.py": "6772e72d5b3933700b4c0afaaa414e35",
     "./operate_site/cspt.py": "b22403797650624c1b27bae545da3134",
     "./operate_site/yhpp.py": "30300f585c6f60872dea43dd0900bd8f",
@@ -91,7 +91,7 @@
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "64d4929ed9041bafca3458536400ea60",
-    "./util/media_mapping.py": "89c273dd403f0aca5f2064b3e11b5523",
+    "./util/media_mapping.py": "e3d0e3421e9442078ab01c23f2eaee40",
     "./util/sqlite_operate.py": "b75906314986dc3ae06c8e1be55da80a",
     "./util/authentication.py": "f25f3f1a71bfda1efb4578df6fd58640",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
@@ -204,5 +204,5 @@
     "./operate_site/hxpt.py": "91b581aa3e6d2b3f143f9937bbdd3595",
     "model_config/site/www.hxpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "9adb90c3ba290133090e5d7e53b08d2941fbef99"
+  "last_git_commit": "df56c735e5502c6a3d45b3bd15b0f401146f08ae"
 }
