@@ -96,7 +96,7 @@
     "./util/authentication.py": "e03a14375b05b6c52b92e43c85a503ad",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
     "./util/tools.py": "67888ccaff0472d21f956276e26e6ca7",
-    "model_config/model-config-dtu.toml": "10598e7a7a0b45900003126c818cdaf5",
+    "model_config/model-config-dtu.toml": "72fa12309e17b927100bed6a08e22846",
     "model_config/readme_dtu.txt": "749dd19c33fac8d190ce5d1072e4f829",
     "model_config/site/hdbao.cc.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "model_config/site/longpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
@@ -206,5 +206,5 @@
     "./operate_site/cdy.py": "f248c74c650e532d4b5fd74c7c0178a6",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "d25ca5f620c0304f555ba7e9dc79294d3709e28d"
+  "last_git_commit": "c09368c76b4fc32edffa4cd1fef5fac702bb49cb"
 }
