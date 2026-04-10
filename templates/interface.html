@@ -138,15 +138,145 @@
         .back-button:hover {
             background-color: #7f8c8d;
         }
+
+        .site-list-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .site-list-btn:hover {
+            background-color: #229954;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .site-list-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        .site-list-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .site-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .site-item:hover {
+            background-color: #e8f4f8;
+            border-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .site-identifier {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #3498db;
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .site-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>自动转发工具接口调用</h1>
+    
     <div class="api-section">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h2 class="section-title">接口列表</h2>
-            <a href="/" class="back-button">返回首页</a>
+            <div style="display: flex; gap: 10px;">
+                <button class="site-list-btn" onclick="openSiteModal()">查看站点标识对照表</button>
+                <a href="/" class="back-button">返回首页</a>
+            </div>
         </div>
         <div class="interface-row">
             <!-- forceLimit -->
@@ -193,8 +323,8 @@
             <div class="interface-container">
                 <div class="interface-title">对目标站重发所有种子 (reloadSite)</div>
                 <div class="form-group">
-                    <label for="reloadSite_s">目标站点域名:</label>
-                    <input type="text" id="reloadSite_s" placeholder="请输入目标站点域名">
+                    <label for="reloadSite_s">目标站点标识:</label>
+                    <input type="text" id="reloadSite_s" placeholder="请输入目标站点标识">
                 </div>
                 <button onclick="callApi('reloadSite')">调用接口</button>
                 <div class="result" id="reloadSite_result"></div>
@@ -217,14 +347,14 @@
             </div>
             <!-- change -->
             <div class="interface-container">
-                <div class="interface-title">站点替换接口 (change)</div>
+                <div class="interface-title">目标站点替换接口 (change)</div>
                 <div class="form-group">
-                    <label for="change_os">原站点域名:</label>
-                    <input type="text" id="change_os" placeholder="请输入原站点域名">
+                    <label for="change_os">原目标站点标识:</label>
+                    <input type="text" id="change_os" placeholder="请输入原目标站点标识">
                 </div>
                 <div class="form-group">
-                    <label for="change_ns">新站点域名:</label>
-                    <input type="text" id="change_ns" placeholder="请输入新站点域名">
+                    <label for="change_ns">新目标站点标识:</label>
+                    <input type="text" id="change_ns" placeholder="请输入新目标站点标识">
                 </div>
                 <button onclick="callApi('change')">调用接口</button>
                 <div class="result" id="change_result"></div>
@@ -233,12 +363,12 @@
             <div class="interface-container">
                 <div class="interface-title">新增站点快速增加本地发布任务 (addNewSite)</div>
                 <div class="form-group">
-                    <label for="addNewSite_ts">模版站点域名:</label>
-                    <input type="text" id="addNewSite_ts" placeholder="请输入模版站点域名">
+                    <label for="addNewSite_ts">已发目标站点标识:</label>
+                    <input type="text" id="addNewSite_ts" placeholder="请输入任意已发目标站点标识，如【ubits.club】">
                 </div>
                 <div class="form-group">
-                    <label for="addNewSite_ns">新增站点域名:</label>
-                    <input type="text" id="addNewSite_ns" placeholder="请输入新增站点域名">
+                    <label for="addNewSite_ns">新增目标站点标识:</label>
+                    <input type="text" id="addNewSite_ns" placeholder="请输入新增目标站点标识，如【www.agsvpt.com】">
                 </div>
                 <button onclick="callApi('addNewSite')">调用接口</button>
                 <div class="result" id="addNewSite_result"></div>
@@ -260,8 +390,8 @@
         <div class="interface-container">
             <div class="interface-title">统计站点发布数据 (statistics)</div>
             <div class="form-group">
-                <label for="statistics_s">源站点域名:</label>
-                <input type="text" id="statistics_s" placeholder="请输入源站点域名">
+                <label for="statistics_s">源站点标识:</label>
+                <input type="text" id="statistics_s" placeholder="请输入源站点标识">
             </div>
             <div class="form-group">
                 <label for="statistics_ym">查询年月 (格式202501):</label>
@@ -273,7 +403,150 @@
     </div>
 </div>
 
+<!-- 站点标识对照表模态框 -->
+<div id="siteModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">站点标识对照表</h2>
+            <span class="close-btn" onclick="closeSiteModal()">&times;</span>
+        </div>
+        <div class="site-grid" id="siteListGrid">
+            <!-- 站点列表将通过JavaScript动态生成 -->
+        </div>
+    </div>
+</div>
+
 <script>
+    // 站点数据配置
+    const siteData = [
+        { name: "末日", identifier: "www.agsvpt.com" },
+        { name: "优堡", identifier: "ubits.club" },
+        { name: "麒麟", identifier: "www.hdkyl.in" },
+        { name: "车站", identifier: "carpt.net" },
+        { name: "劳改所", identifier: "ptlgs.org" },
+        { name: "织梦", identifier: "zmpt.cc" },
+        { name: "雨站", identifier: "raingfh.top" },
+        { name: "柠檬", identifier: "lemonhd.club" },
+        { name: "南工", identifier: "njtupt.top" },
+        { name: "学校", identifier: "pt.btschool.club" },
+        { name: "青蛙", identifier: "www.qingwapt.com" },
+        { name: "红豆饭", identifier: "hdfans.org" },
+        { name: "好大", identifier: "hdarea.club" },
+        { name: "猫站", identifier: "pterclub.net" },
+        { name: "库非", identifier: "kufei.org" },
+        { name: "克隆", identifier: "pt.hdclone.org" },
+        { name: "肉丝", identifier: "rousi.zip" },
+        { name: "冰淇淋", identifier: "www.icc2022.com" },
+        { name: "一吧", identifier: "1ptba.com" },
+        { name: "烧包", identifier: "ptsbao.club" },
+        { name: "做我", identifier: "www.devtracker.me" },
+        { name: "青虫", identifier: "cyanbug.net" },
+        { name: "熊猫", identifier: "pandapt.net" },
+        { name: "套套", identifier: "totheglory.im" },
+        { name: "私区", identifier: "www.ptzone.xyz" },
+        { name: "铃音", identifier: "pt.soulvoice.club" },
+        { name: "农场", identifier: "pt.0ff.cc" },
+        { name: "家园", identifier: "hdhome.org" },
+        { name: "时光", identifier: "hdtime.org" },
+        { name: "好多油", identifier: "pt.upxin.net" },
+        { name: "开心", identifier: "www.joyhd.net" },
+        { name: "OK", identifier: "www.okpt.net" },
+        { name: "欧申", identifier: "www.oshen.win" },
+        { name: "铂金", identifier: "ptchina.org" },
+        { name: "高清家", identifier: "pthome.net" },
+        { name: "咖啡", identifier: "ptcafe.club" },
+        { name: "蟹黄堡", identifier: "crabpt.vip" },
+        { name: "龙之家", identifier: "www.dragonhd.xyz" },
+        { name: "回声", identifier: "hspt.club" },
+        { name: "海宝", identifier: "hdbao.cc" },
+        { name: "爱乐", identifier: "www.ptlover.cc" },
+        { name: "铂粉", identifier: "ptfans.cc" },
+        { name: "搞铁", identifier: "pt.gtkpw.xyz" },
+        { name: "明教", identifier: "hdpt.xyz" },
+        { name: "百川", identifier: "www.hitpt.com" },
+        { name: "小伞", identifier: "sanpro.pw" },
+        { name: "种子库", identifier: "torrenthub.club" },
+        { name: "星陨阁", identifier: "pt.xingyungept.org" },
+        { name: "财神", identifier: "cspt.top" },
+        { name: "唐门", identifier: "tmpt.top" },
+        { name: "蝴蝶", identifier: "hudbt.hust.edu.cn" },
+        { name: "南洋", identifier: "nanyangpt.com" },
+        { name: "TJUPT", identifier: "tjupt.org" },
+        { name: "冬樱", identifier: "wintersakura.net" },
+        { name: "吹风", identifier: "et8.org" },
+        { name: "吐鲁番", identifier: "pt.eastgame.org" },
+        { name: "海威", identifier: "hdvideo.one" },
+        { name: "HDCITY", identifier: "hdcity.city" },
+        { name: "杜比", identifier: "www.hddolby.com" },
+        { name: "五二", identifier: "52pt.site" },
+        { name: "人人", identifier: "audiences.me" },
+        { name: "樱花", identifier: "pt.ying.us.kg" },
+        { name: "下水道", identifier: "sewerpt.com" },
+        { name: "柠檬甜", identifier: "lemonhd.net" },
+        { name: "轨道炮", identifier: "bilibili.download" },
+        { name: "新星", identifier: "pt.novahd.top" },
+        { name: "三月", identifier: "duckboobee.org" },
+        { name: "幸运", identifier: "pt.luckpt.de" },
+        { name: "垃圾堆", identifier: "pt.lajidui.top" },
+        { name: "十三城", identifier: "13city.org" },
+        { name: "自然", identifier: "zrpt.cc" },
+        { name: "昆仑", identifier: "www.yhpp.cc" },
+        { name: "慕雪阁", identifier: "pt.muxuege.org" },
+        { name: "我的", identifier: "cc.mypt.cc" },
+        { name: "幻境", identifier: "nex.jivon.de" },
+        { name: "沙比", identifier: "sbpt.link" },
+        { name: "爱玲", identifier: "pt.aling.de" },
+        { name: "藏宝", identifier: "cangbao.ge" },
+        { name: "天枢", identifier: "dubhe.site" },
+        { name: "忘年", identifier: "ptlao.top" },
+        { name: "长久", identifier: "longpt.org" },
+        { name: "铂金短", identifier: "www.ptskit.org" },
+        { name: "躺平", identifier: "www.tangpt.top" },
+        { name: "包子", identifier: "pt.baozi.cc" },
+        { name: "好学", identifier: "www.hxpt.org" },
+        { name: "传道院", identifier: "pt.cdy.skin" }
+    ];
+
+    // 打开站点标识模态框
+    function openSiteModal() {
+        document.getElementById('siteModal').style.display = 'block';
+    }
+
+    // 关闭站点标识模态框
+    function closeSiteModal() {
+        document.getElementById('siteModal').style.display = 'none';
+    }
+
+    // 点击模态框外部关闭
+    window.onclick = function(event) {
+        const modal = document.getElementById('siteModal');
+        if (event.target === modal) {
+            closeSiteModal();
+        }
+    }
+
+    // 渲染站点列表
+    function renderSiteList() {
+        const gridContainer = document.getElementById('siteListGrid');
+        let html = '';
+        
+        siteData.forEach(site => {
+            html += `
+                <div class="site-item">
+                    <span class="site-name">${site.name}</span>
+                    <span class="site-identifier">${site.identifier}</span>
+                </div>
+            `;
+        });
+        
+        gridContainer.innerHTML = html;
+    }
+
+    // 页面加载时渲染站点列表
+    document.addEventListener('DOMContentLoaded', function() {
+        renderSiteList();
+    });
+
     // 调用API函数
     function callApi(method) {
         // 使用Flask提供的基础地址

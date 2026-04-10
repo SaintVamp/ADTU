@@ -83,7 +83,7 @@
     "./operate_site/luckpt.py": "c09a3e0eef7d3b92229d1480a04cd72f",
     "./operate_site/nanyangpt.py": "6d34c95df10dab1a28f300e45b56a782",
     "./operate_site/sanpro.py": "620f9723857f75abbc15e1edcd78655b",
-    "./operate_site/zrpt.py": "f56f0c394cbc27e81ff1eb758fdd015f",
+    "./operate_site/zrpt.py": "f05bf6d9c3878e11b0649d08b6dbe894",
     "./operate_site/ptsbao.py": "a098270179100155f33d89c5a67fb3d8",
     "./auto_upload.py": "157ab4005ccc1caac0b982e154e0b999",
     "./util/site_config.py": "038a5a570a4ff8cf91c956374a271425",
@@ -198,13 +198,13 @@
     "model_config/model-forbidden.toml": "0bfe776bf1ab067859392b387080ec4c",
     "templates/index.html": "39463ff63fc8c8c2590168cd759d371b",
     "templates/config.html": "63f8f90db685fa0f83db79b5602278b8",
-    "templates/interface.html": "02bb54a2803cd2ae80023968e783fdfd",
+    "templates/interface.html": "49c83e3a1e932150f78541a06a6dfdd7",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca",
     "./operate_site/hxpt.py": "91b581aa3e6d2b3f143f9937bbdd3595",
     "model_config/site/www.hxpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
-    "./operate_site/cdy.py": "f248c74c650e532d4b5fd74c7c0178a6",
+    "./operate_site/cdy.py": "8c526f081505e7dd7db7cd62ba0a6ec0",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "c09368c76b4fc32edffa4cd1fef5fac702bb49cb"
+  "last_git_commit": "5a2a34fd045ced8bc76e95f47d083d264a3e4233"
 }
