@@ -1,6 +1,6 @@
 {
   "files": {
-    "./atut_serv.py": "370c41073b639fa34b086f3e78685b82",
+    "./atut_serv.py": "190b98f0b9c1f1dd6ac9ee144eedbc0b",
     "./get_rss.py": "387438569534c43aa233e6bd7bdf8764",
     "./image_bed/bed_ptdream.py": "362343dd013cba85ebeb2094e280e372",
     "./image_bed/bed_ptvicomo.py": "3b1d9c7fae4ed398149b782db8c06325",
@@ -206,5 +206,5 @@
     "./operate_site/cdy.py": "8c526f081505e7dd7db7cd62ba0a6ec0",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "0e8f460f02e38973921b70306ed00717455dda85"
+  "last_git_commit": "def325f4bbb23c1688981c42ee7629ed79762791"
 }
