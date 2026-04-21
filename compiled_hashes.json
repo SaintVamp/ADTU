@@ -12,7 +12,7 @@
     "./operate_site/oneptba.py": "d6491015db731a78e1857a9a48ba14d6",
     "./operate_site/mypt.py": "de27d03d531e215ea99a513b6aacd732",
     "./operate_site/agsvpt.py": "af3b1ee5d050e0bbe27669559caa0638",
-    "./operate_site/longpt.py": "38641ef5d861593335546a35610aa700",
+    "./operate_site/longpt.py": "16162b0de19ffed4226d64ca47c9c3f7",
     "./operate_site/lemonhd.py": "8032d4c1b5ad6cf039cec298ef2f2c45",
     "./operate_site/oshen.py": "2322d0054dc9f4704a0fe57f2f9cc75e",
     "./operate_site/rousi.py": "155e59b54393905d28257215a36ff6d2",
@@ -201,10 +201,10 @@
     "templates/interface.html": "49c83e3a1e932150f78541a06a6dfdd7",
     "templates/favicon.ico": "55078cdefc012622fb33347af42b1c0e",
     "templates/detail.html": "8a2198b4d141672b3ccee5dd5ce974ca",
-    "./operate_site/hxpt.py": "91b581aa3e6d2b3f143f9937bbdd3595",
+    "./operate_site/hxpt.py": "6f97e50d99cb8329164d311cc4fbcd27",
     "model_config/site/www.hxpt.org.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6",
     "./operate_site/cdy.py": "8c526f081505e7dd7db7cd62ba0a6ec0",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "0d5ff72970a77dd82153b6d4e49a5a4db9584ffb"
+  "last_git_commit": "cb2cbbcaa04ad9277face0069d0d1fdd01bb931d"
 }
