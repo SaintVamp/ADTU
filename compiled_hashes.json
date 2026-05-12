@@ -12,7 +12,7 @@
     "./operate_site/oneptba.py": "46ebd7511e4cb60f3b2527339c755fc3",
     "./operate_site/mypt.py": "9c2206fdbf5307709bb6fc471ccf4601",
     "./operate_site/agsvpt.py": "b58b66cb88672ddf2124a90c9125bf4d",
-    "./operate_site/longpt.py": "b63dacfe96feabb2da61d12dc8fb856e",
+    "./operate_site/longpt.py": "4beae3c8746566a38087d5e769cc73ab",
     "./operate_site/lemonhd.py": "447af08e141fed7e5a836d45f0c63266",
     "./operate_site/oshen.py": "85489fa3133c19fde2fda4fa719efe87",
     "./operate_site/rousi.py": "155e59b54393905d28257215a36ff6d2",
@@ -206,5 +206,5 @@
     "./operate_site/cdy.py": "021ca58893854b18168bb75798b16e1a",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "2764cea17205101a6a75e0200cc9678bc9a6dd0a"
+  "last_git_commit": "b362c68c5fadbfc03bca43a30c3bd5986500a450"
 }
