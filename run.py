@@ -1,8 +1,8 @@
 from atut_serv import start_serv
 from util.svlog import logs
 
-ver = "2026-05-12 14:45:12"
-ts = 1778568312
+ver = "2026-05-14 11:06:09"
+ts = 1778727969
 if __name__ == '__main__':
     logs.logger.info(f'下载转发端主程序启动，V1.0.1 ver={ver}')
     start_serv(ts)
