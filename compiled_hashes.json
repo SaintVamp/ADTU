@@ -91,7 +91,7 @@
     "./util/svlog.py": "a46ada82f9cb18f6235bc520dc09b3f2",
     "./util/ATUTException.py": "48c67d305041dabb58fdca3230fddefd",
     "./util/change_factory.py": "60862c9fe3d7d9edfd046fe556294acc",
-    "./util/media_mapping.py": "d9c4cc80b3b03986e92dd9d75cb46de7",
+    "./util/media_mapping.py": "ff745ffb2e0e96818f32610febafdc79",
     "./util/sqlite_operate.py": "285e7a158bfe4585d638b9cfc7944f07",
     "./util/authentication.py": "e03a14375b05b6c52b92e43c85a503ad",
     "./util/util_rsa.py": "f258cc6640e0c6d5a1780dd14f493b52",
@@ -206,5 +206,5 @@
     "./operate_site/cdy.py": "021ca58893854b18168bb75798b16e1a",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "09ae84c8dbc967a5ff0b7da30580cef550a1ba45"
+  "last_git_commit": "23cc26b204036c5d8b0912be17df3298e425137e"
 }
