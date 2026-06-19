@@ -34,7 +34,7 @@
     "./operate_site/dragonhd.py": "8c6b660f75f53893f44a6b201bcf2b6d",
     "./operate_site/hitpt.py": "f0f248a5bf49e793cfb5913015b3c48e",
     "./operate_site/hdatmos.py": "bb8283d149a9f02f7dc3758076176d4e",
-    "./operate_site/ubits.py": "dab44bfc4112a254cf2beff5f6334861",
+    "./operate_site/ubits.py": "b857c4a06aa6cbcfc591411b17177264",
     "./operate_site/ptvicomo.py": "c87ace9246c0fd81a102bb80b35c17a8",
     "./operate_site/cangbao.py": "de12dac2c8a4e706bb41a3ffabe0b8a3",
     "./operate_site/novahd.py": "8b239f18010aefe38089633c35103850",
@@ -206,5 +206,5 @@
     "./operate_site/cdy.py": "021ca58893854b18168bb75798b16e1a",
     "model_config/site/pt.cdy.skin.toml": "d5df3730cb5c6bf4be136f9a1d3eb7c6"
   },
-  "last_git_commit": "17a1a4731e7d0b6aaa7a68ece42ee7534cf28372"
+  "last_git_commit": "7b82179d5a109e00f261135087ce66aa6f5fb343"
 }
